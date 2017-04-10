@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"special_cha",
+				"special_char"
+			],
+			[
+				"special",
+				"special_chars"
+			],
+			[
+				"weigh",
+				"WEIGHT"
+			],
+			[
+				"stopl",
+				"stoplist_hash"
+			],
+			[
 				"bigram",
 				"bi_gram"
 			],
@@ -267,36 +283,45 @@
 			"file": "search_engine.py",
 			"settings":
 			{
-				"buffer_size": 29572,
+				"buffer_size": 27318,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "search.py",
+			"settings":
+			{
+				"buffer_size": 1578,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "run.sh",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "json2doc_vector.py",
+			"settings":
+			{
+				"buffer_size": 5266,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "read_JSON.py",
 			"settings":
 			{
-				"buffer_size": 3598,
+				"buffer_size": 4068,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "courses.json",
-			"settings":
-			{
-				"buffer_size": 25507917,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vector1.py",
-			"settings":
-			{
-				"buffer_size": 32457,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -332,10 +357,18 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/alex/Desktop/Semesterly"
+		"/Users/alex/Desktop/Semesterly",
+		"/Users/alex/Desktop/Semesterly/json_files"
 	],
 	"file_history":
 	[
+		"/Users/alex/Desktop/Semesterly/baseline_search_engine.py",
+		"/Users/alex/Desktop/Semesterly/json_files/corp_freq_hash.json",
+		"/Users/alex/Desktop/Semesterly/json_files/course_vector.json",
+		"/Users/alex/Desktop/Semesterly/vector1.py",
+		"/Users/alex/Desktop/Semesterly/courses.json",
+		"/Users/alex/Desktop/Semesterly/courses_dict.json",
+		"/Users/alex/Desktop/Semesterly/read_JSON.py",
 		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/BayesClasses.py",
 		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/CliqueTree.py",
 		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/3/hw3b/hw3b-files/topwords.py",
@@ -458,6 +491,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"term",
+			"course_vector",
+			"indent=4",
+			"course_freq_hash",
+			"school_freq_hash",
+			"corp_freq_hash",
+			"doc_vector",
+			"5669",
+			"7913",
+			"5668",
+			"\\n",
 			"\"code\": \"(02)\"",
 			"section",
 			"line",
@@ -574,18 +618,7 @@
 			"-1",
 			"item\t",
 			"item ",
-			"address",
-			"quoted",
-			"item",
-			"split",
-			"features",
-			"item_start",
-			"sentence",
-			"\t",
-			"classes",
-			"Y_test",
-			"Y_train",
-			"as "
+			"address"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -603,7 +636,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -612,15 +645,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 29572,
+						"buffer_size": 27318,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1336,
-								1336
+								5149,
+								5149
 							]
 						],
 						"settings":
@@ -630,33 +663,62 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1821.0,
+						"translation.y": 2907.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "read_JSON.py",
+					"file": "search.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3598,
+						"buffer_size": 1578,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								338,
-								336
+								1416,
+								1416
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 456.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "run.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -666,50 +728,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "courses.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25507917,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7381617,
-								7381617
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6710259.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "vector1.py",
+					"file": "json2doc_vector.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32457,
+						"buffer_size": 5266,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								634,
-								634
+								1978,
+								1978
 							]
 						],
 						"settings":
@@ -719,10 +751,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 481.0,
+						"translation.y": 1085.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "read_JSON.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4068,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -782,9 +844,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "expar",
+		"last_filter": "paral",
 		"selected_items":
 		[
+			[
+				"paral",
+				"~/Google Drive/JHU/2017 Spring/Parallel Programming/Homework/parallel_programming.sublime-project"
+			],
 			[
 				"expar",
 				"~/Documents/GitHub/Escalus/ETL/ex_parte.sublime-workspace"
@@ -821,7 +887,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 281.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

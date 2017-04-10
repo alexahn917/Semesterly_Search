@@ -25,120 +25,34 @@ res_vector = []
 
 sys.stderr.write("INITIALIZING VECTORS ... \n")
 
-# Stopwords
-for line in open("common_words.stemmed", 'r'):
-    if line:
-        stoplist_hash.add(line.strip())
 
-# File Reading
-json_data=open("courses.json").read()
-data = json.loads(json_data)
+# write to json files
+with open("json_files/course_vector.json", "w") as f:
+    course_vector = json.load(course_vector, f)
+    course_vector = json_loads_byteified(course_vector)
+
+with open("json_files/titles_vector.json", "w") as f:
+    titles_vector = json.load(titles_vector, f)
+    titles_vector = json_loads_byteified(course_vector)
+
+with open("json_files/course_codes.json", "w") as f:
+    course_codes = json.load(course_codes, f)
+    course_codes = json_loads_byteified(course_vector)
+
+with open("json_files/docs_freq_hash.json", "w") as f:
+    docs_freq_hash = json.load(docs_freq_hash, f)
+    docs_freq_hash = json_loads_byteified(course_vector)
+
+with open("json_files/corp_freq_hash.json", "w") as f:
+    corp_freq_hash = json.load(corp_freq_hash, f)
+    corp_freq_hash = json_loads_byteified(course_vector)
+
+with open("json_files/stoplist_hash.json", "w") as f:
+    stoplist_hash = json.load(stoplist_hash, f)
+    stoplist_hash = json_loads_byteified(course_vector)
 
 # Stemming
 p = PorterStemmer()
-
-TITLE = 2
-DESC = 1
-
-docs_freq_hash = {}
-corp_freq_hash = {}
-
-doc_vector.append(defaultdict(int))
-titles_vector.append("")
-
-ID = 0
-
-for line in data:
-    course = {}
-
-    if line['kind'] == 'course':
-        ID+=1
-        course = {}
-        #courses[line['code']] = course
-        course['ID'] = ID
-        course['code'] = line['code']
-        course['title'] = line['name']
-        try:
-            course['description'] = line['description']
-        except:
-            course['description'] = ""
-    if line['kind'] == 'meeting':
-        course['instructors'] = 
-
-for course in courses:        
-        doc_vect = {}
-        terms = set()
-        doc_vector.append(doc_vect)
-        titles_vector.append(course['code'] + "   " + course['title'])
-
-        title_word_vect = course['title'].split(" ")
-        descp_word_vect = str(course['description']).split(' ')
-        
-        prev = ""
-        for title_word in title_word_vect:
-            title_word = title_word.lower()
-            title_word = p.stem(title_word, 0, len(title_word)-1)
-            if title_word not in doc_vect:
-                doc_vect[title_word] = TITLE
-            else:
-                doc_vect[title_word] += TITLE
-
-            if title_word not in corp_freq_hash:
-                corp_freq_hash[title_word] = 1
-            else:
-                corp_freq_hash[title_word] += 1        
-            terms.add(title_word)
-
-            if prev:
-                bigram = prev+" "+title_word
-                if bigram not in doc_vect:
-                    doc_vect[bigram] = TITLE
-                else:
-                    doc_vect[bigram] += TITLE
-
-                if bigram not in corp_freq_hash:
-                    corp_freq_hash[bigram] = 1
-                else:
-                    corp_freq_hash[bigram] += 1
-                terms.add(bigram)
-            prev = title_word
-
-        prev = ""
-        for descp_word in descp_word_vect:
-            descp_word = descp_word.lower()
-            descp_word = p.stem(descp_word, 0, len(descp_word)-1)
-            if descp_word not in doc_vect:
-                doc_vect[descp_word] = DESC
-            else:
-                doc_vect[descp_word] += DESC
-
-            if descp_word not in corp_freq_hash:
-                corp_freq_hash[descp_word] = 1
-            else:
-                corp_freq_hash[descp_word] += 1                   
-            terms.add(descp_word)
-
-            if prev:
-                bigram = prev+" "+descp_word
-                if bigram not in doc_vect:
-                    doc_vect[bigram] = DESC
-                else:
-                    doc_vect[bigram] += DESC
-
-                if bigram not in corp_freq_hash:
-                    corp_freq_hash[bigram] = 1
-                else:
-                    corp_freq_hash[bigram] += 1
-                terms.add(bigram)
-            prev = descp_word
-
-        for term in terms:
-            if term not in docs_freq_hash:
-                docs_freq_hash[term] = 1
-            else:
-                docs_freq_hash[term] += 1
-
-total_docs = ID
 
 # Using Thesures(Synonyms)
 synonyms = {}
