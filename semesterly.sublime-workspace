@@ -1,0 +1,829 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bigram",
+				"bi_gram"
+			],
+			[
+				"var",
+				"variables_index"
+			],
+			[
+				"psi",
+				"psi_index"
+			],
+			[
+				"_va",
+				"_values_int"
+			],
+			[
+				"joint",
+				"joint_var"
+			],
+			[
+				"card",
+				"cardinalities"
+			],
+			[
+				"comm",
+				"common_vars_index"
+			],
+			[
+				"com",
+				"common_vars_index"
+			],
+			[
+				"mul",
+				"multiply_factors"
+			],
+			[
+				"margin",
+				"marginalized_factors"
+			],
+			[
+				"None",
+				"nonsepsets"
+			],
+			[
+				"_tabl",
+				"_table_rv"
+			],
+			[
+				"factor",
+				"factor_one"
+			],
+			[
+				"commo_",
+				"common_var"
+			],
+			[
+				"magr",
+				"marginalized_factors"
+			],
+			[
+				"margi",
+				"marginalize_cpd"
+			],
+			[
+				"cli",
+				"clique_i"
+			],
+			[
+				"cli_",
+				"clique_two"
+			],
+			[
+				"ran",
+				"_random_variables"
+			],
+			[
+				"calcula",
+				"calculate_message"
+			],
+			[
+				"num_",
+				"_num_edges"
+			],
+			[
+				"observed",
+				"observed_values"
+			],
+			[
+				"in",
+				"_cpd_index_num"
+			],
+			[
+				"cl",
+				"clique"
+			],
+			[
+				"clique",
+				"clique_vars"
+			],
+			[
+				"quer",
+				"queries_file"
+			],
+			[
+				"obsv_",
+				"obs_vals_dict"
+			],
+			[
+				"observ",
+				"observed_vals"
+			],
+			[
+				"ini",
+				"initialize_cliques"
+			],
+			[
+				"_cpd",
+				"_cpd_index"
+			],
+			[
+				"_values",
+				"_values_int"
+			],
+			[
+				"index",
+				"_cpd_index"
+			],
+			[
+				"cpd",
+				"cpd_file"
+			],
+			[
+				"write",
+				"write_cpds"
+			],
+			[
+				"_v",
+				"_cpd_val_size"
+			],
+			[
+				"dis",
+				"distribution"
+			],
+			[
+				"split",
+				"splitted"
+			],
+			[
+				"par",
+				"parsed"
+			],
+			[
+				"values",
+				"_values_int"
+			],
+			[
+				"_cpd_",
+				"_cpd_index"
+			],
+			[
+				"dist",
+				"distrib"
+			],
+			[
+				"_c",
+				"_cpd"
+			],
+			[
+				"_cp",
+				"_cpd"
+			],
+			[
+				"_val",
+				"_values_int"
+			],
+			[
+				"_cpd_ind",
+				"_cpd_index_num"
+			],
+			[
+				"pare",
+				"_parents_index"
+			],
+			[
+				"_si",
+				"_distributions"
+			],
+			[
+				"count",
+				"count_block"
+			],
+			[
+				"su",
+				"sub_block_size"
+			],
+			[
+				"updat",
+				"updated_block"
+			],
+			[
+				"number",
+				"number_of_neighbors"
+			],
+			[
+				"hs",
+				"has_phone_number"
+			],
+			[
+				"test",
+				"test_row"
+			],
+			[
+				"sp",
+				"split_by_sentence"
+			],
+			[
+				"batch",
+				"batch_ys"
+			],
+			[
+				"med",
+				"med_x"
+			],
+			[
+				"paddi",
+				"padding-right"
+			],
+			[
+				"right",
+				"padding-right"
+			],
+			[
+				"Cur",
+				"current_price"
+			],
+			[
+				"curr",
+				"curr_day"
+			],
+			[
+				"day",
+				"curr_day"
+			],
+			[
+				"insid",
+				"inside_tradings"
+			],
+			[
+				"currne",
+				"current_price"
+			],
+			[
+				"trd",
+				"trader_name"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "search_engine.py",
+			"settings":
+			{
+				"buffer_size": 29572,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "read_JSON.py",
+			"settings":
+			{
+				"buffer_size": 3598,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "courses.json",
+			"settings":
+			{
+				"buffer_size": 25507917,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vector1.py",
+			"settings":
+			{
+				"buffer_size": 32457,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/alex/Desktop/Semesterly"
+	],
+	"file_history":
+	[
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/BayesClasses.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/CliqueTree.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/3/hw3b/hw3b-files/topwords.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/BayesNets.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/bayes-query-sp.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/Submission/estimate-params",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/Submission/estimate-params.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/estimate-params",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/estimate-params.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cpd-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cpd-grid15x15-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/CliqueClasses.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/CliqueTree_gn.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/BayesClasses_0.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cliquetree-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/queries-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/1/hw1/BayesNets.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/1/hw1/hw1-sahn25-rnabiab1/BayesNets.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/queries-grid10x10-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/generate_cliquetree.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cpd-grid10x10-t1000.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cpd-grid10x10-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/map-grid15x15-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cliquetree-grid15x15-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/queries-grid15x15-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/queries-grid10x10-t1000.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cliquetree-grid10x10-t1000.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/cliquetree-grid10x10-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/test_cliquetree-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/network-grid10x10-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/ClusterGraph.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/hw2b-files/network-grid15x15-t100.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/cpd-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/cpd-stemmed.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/network-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/training-grid10x10-t10.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/1/hw1/bayes-query.py",
+		"/Users/alex/Documents/GitHub/Cafeit/gradle.properties",
+		"/Users/alex/Documents/GitHub/Cafeit/gradlew.bat",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/network-test.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/cpd-test.txt",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Parallel Programming/Homework/1/test.c",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Parallel Programming/Homework/1/nodeadlock.c",
+		"/Users/alex/Documents/GitHub/Escalus/ETL/parse_opinion.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Parallel Programming/Homework/1/gameoflife.c",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/Submission/hw1a/classify.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/unlikely_proper_nouns",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/extra",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/starting_words",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/segment/standards",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/abbrevs",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/Classifiers/classify.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/Classifiers/Segment_classifier.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/Classifiers/EOS_classifier.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/sent.data.train",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/strings_parse.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/Segment_classifier.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classify.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/names",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/marks",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/classes/names_parsed",
+		"/Users/alex/Google Drive/DataStructures/Homework Grading/HW2/Sample_solutions/FlexibleArray.adt",
+		"/Users/alex/Google Drive/DataStructures/Homework Grading/HW2/Sample_solutions/SparseArray.java",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/foo.prl",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/foo.pl",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/scikit-learn/run.py",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/bin/Palantir/palantir_interview.java",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/tensorflow/tensorflow.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/TS_tutorial.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/tensorflow/tensorflow_1.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/tensorflow_1.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/clean_data/Clayton_Kershaw",
+		"/Users/alex/Documents/GitHub/temsorflow_1.py",
+		"/Users/alex/Documents/GitHub/Scikit-learn_Tutorial/tutorial_1.py",
+		"/Users/alex/Google Drive/JHU/2017 Spring/Data Mining/Lecture_2/code.py",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Array/findDuplicateRange.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Palantir/SortingLetterByOccurance.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Palantir/findDuplicateRange.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Palantir/dupInRange.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Palantir/CryptAnalysisProblem.java",
+		"/Users/alex/Google Drive/resume_builder.html",
+		"/Users/alex/Documents/GitHub/Scikit-Learn Tutorial/tutorial_1.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/raw_data/Clayton Kershaw_R.csv",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/dataset/Test/easy.test",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/scikit-learn/parseCSV.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/dataset/Test/easy",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/dataset/Clayton_Kershaw/data1.test",
+		"/Users/alex/Documents/GitHub/SocialDating_Matching_and_Clustering/Social Dating/Data/classification_data/data1.test",
+		"/Users/alex/Documents/GitHub/SocialDating_Matching_and_Clustering/Social Dating/Data/cluster_data/clust_data1.test",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/model_code/run.sh",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/Transform/Clayton_Kershaw_txt",
+		"/Users/alex/Google Drive/Career/Companies/Originate/code/myQueue.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/Python/CatchInsideTrader.py",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/bin/Palantir/rangeSumQuery.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/bin/Palantir/containsDuplicate.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/bin/Palantir/singleNumber.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/bin/Palantir/containsDup3.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/bin/Palantir/containsDup3.py",
+		"/Users/alex/Desktop/untitled.py",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Palantir/CatchInsideTrader.java",
+		"/Users/alex/Downloads/material-resume-master/index.html",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/Transform/parseCSV.py",
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/Transform/CSVReader.java",
+		"/Users/alex/Documents/GitHub/Coding_Challenges/Python/findFraudolentTraders.py",
+		"/Users/alex/Google Drive/Career/Companies/MilliporeSigma/screen.txt"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\"code\": \"(02)\"",
+			"section",
+			"line",
+			"description",
+			"GET_AND_SHOW_RETRIEVED_SET",
+			"get_and_show_retrieved_set",
+			"menu",
+			"total_qrys",
+			"ind",
+			"idx",
+			"course_title",
+			"    \"kind\": \"section\",",
+			"    \"kind\": \"course\",",
+			"first_seg",
+			"kind",
+			"PH.120.820",
+			"line",
+			"title",
+			"Title",
+			"title",
+			"Title",
+			"title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"common_vars",
+			"_nam",
+			"sys",
+			"index",
+			"cpd",
+			"_cpd_index",
+			"_cpd",
+			"print",
+			"self.get_name",
+			"get_cardinatiry",
+			"cpd_index",
+			"self._cliques[clique_name]._factors",
+			"self._cliques[clique_name]._factors.",
+			"Action_0,PositionRow_0,PositionCol_0,PositionRow_1",
+			"Action_0,PositionCol_0,PositionRow_0,PositionRow_1",
+			"extention",
+			"diff",
+			"self.",
+			"clique_tree_file",
+			"15x15",
+			"ObserveLandmark2_N_8,PositionRow_8,PositionCol_8",
+			"Action_7,PositionRow_7,PositionCol_7,PositionRow_8",
+			"num_nodes",
+			"ClusterGraph",
+			"Action_2,PositionRow_2,PositionCol_2,PositionRow_3 -- ObserveLandmark1_W_2,PositionRow_2,PositionCol_2\n",
+			"Action_8,PositionRow_8,PositionCol_8,PositionRow_9 -- ObserveLandmark2_N_8,PositionRow_8,PositionCol_8\n",
+			"Action_8,PositionCol_8,PositionRow_9,PositionCol_9 -- ObserveWall_N_9,PositionRow_9,PositionCol_9\n",
+			"Action_8,PositionRow_8,PositionCol_9,PositionRow_9 -- ObserveLandmark2_E_9,PositionRow_9,PositionCol_9",
+			"Action_8,PositionRow_8,PositionCol_9,PositionRow_9 -- ObserveLandmark2_E_9,PositionRow_9,PositionCol_9\n",
+			"Action_9,PositionRow_9,PositionCol_9,PositionRow_10 -- ObserveLandmark1_S_9,PositionRow_9,PositionCol_9\n",
+			"Action_7,PositionRow_7,PositionCol_7,PositionRow_8 -- ObserveLandmark1_W_7,PositionRow_7,PositionCol_7\n",
+			"Action_0,PositionRow_0,PositionCol_0,PositionRow_1 -- Action_0,PositionRow_0,PositionCol_1,PositionRow_1",
+			"Action_0,PositionRow_0,PositionCol_0,PositionRow_1 -- Action_0,PositionRow_0,PositionCol_1,PositionRow_1\n",
+			"Action_1,PositionRow_1,PositionCol_1,PositionRow_2 -- Obs_1,PositionRow_1,PositionCol_1",
+			"variables",
+			"Action_0,PositionCol_0,PositionRow_1,PositionCol_1\n",
+			"grid_size",
+			"15x15",
+			"distribution",
+			"Distribution",
+			"t1000",
+			"10x10",
+			"ObserveLandmark2_W_0=No PositionRow_0=4,PositionCol_0=10",
+			"PositionRow_1=3 PositionRow_0=3,Action_1=MoveEast",
+			"PositionRow_1=3 PositionRow_0=4,Action=MoveSouth 0.9",
+			"PositionRow_1=3 PositionRow_0=4,Action=MoveSouth 0.900886",
+			"PositionRow",
+			"pr",
+			"PR",
+			"pr",
+			"PR",
+			"value",
+			"i",
+			"int_val",
+			"each_val",
+			"=No",
+			"print",
+			"observelandmark2_N_",
+			"observelandmark2_N_1=No",
+			"observelandmark2_N",
+			"line",
+			"lines",
+			"R_8=3,C_8=4",
+			"R_7=3,C_7=4",
+			"R_0",
+			"Move",
+			"Action",
+			"PositionCol",
+			"PositionRow",
+			"799424",
+			"action_0",
+			"_1",
+			"_0",
+			"_1",
+			"_0",
+			"block",
+			"updated_block",
+			"int j",
+			"malloc",
+			"DIM*row_size",
+			"DIM * row_size",
+			"  \n",
+			"send_down",
+			"MPI_CHAR",
+			"-1",
+			"item\t",
+			"item ",
+			"address",
+			"quoted",
+			"item",
+			"split",
+			"features",
+			"item_start",
+			"sentence",
+			"\t",
+			"classes",
+			"Y_test",
+			"Y_train",
+			"as "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "search_engine.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1336,
+								1336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1821.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "read_JSON.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "courses.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25507917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7381617,
+								7381617
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6710259.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "vector1.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 481.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "semesterly.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "expar",
+		"selected_items":
+		[
+			[
+				"expar",
+				"~/Documents/GitHub/Escalus/ETL/ex_parte.sublime-workspace"
+			],
+			[
+				"",
+				"~/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/IR.sublime-project"
+			],
+			[
+				"data ",
+				"~/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/HW1/Submission/hw1b/data_to_models.sublime-workspace"
+			],
+			[
+				"basebal",
+				"~/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/pitch_prediction.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

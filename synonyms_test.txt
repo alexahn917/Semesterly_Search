@@ -1,0 +1,14 @@
+graphic,geometric,surface$
+operating,operating system,os,operating systems$
+timesharing,time-sharing,time-share,time share system, time-sharing system$
+compiler,compile,compiling,compilation$
+language,expression$
+parallel,parallelism,concurrent$
+communcation,communicating,messaging,passing,message passing$
+design,implementation$
+descriptions,explanations,writing,experiment$
+networks,networking$
+efficient,optimal,effective,optimum,best,efficiency$
+applications,implementation,usage$
+human,person$
+processes,process,processing,computing$
