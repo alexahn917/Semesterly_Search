@@ -13,6 +13,7 @@ from collections import defaultdict
 
 doc_simula = []
 res_vector = []
+courses = None
 course_vector = None
 titles_vector = None
 course_code2num = None
@@ -25,6 +26,7 @@ synonyms_list = None
 p = None
 
 def main():
+    global courses
     global course_vector
     global titles_vector
     global course_code2num
@@ -33,6 +35,7 @@ def main():
     global corp_freq_hash
     
     initialize()
+    courses = read_json("json_files/preprocessed_courses.json")
     course_vector = read_json("json_files/course_vector.json")
     titles_vector = read_json("json_files/titles_vector.json")
     course_code2num = read_json("json_files/course_code2num.json")
@@ -40,31 +43,40 @@ def main():
     docs_freq_hash = read_json("json_files/docs_freq_hash.json")
     corp_freq_hash = read_json("json_files/corp_freq_hash.json")
     total_docs = len(course_vector)
+
     menu = \
     "============================================================\n"\
     "==      Welcome to the Semester.ly's Search Engine          \n"\
     "==                                                          \n"\
-    "==      Total Number of Courses: {0}                                \n"\
+    "==      Total Number of Courses: {0}                        \n"\
     "============================================================\n"\
     "                                                            \n"\
     "OPTIONS:                                                    \n"\
-    "  1 = Find documents most similar to a given query or document\n"\
-    "  2 = Quit                                                    \n"\
-    "                                                              \n"\
+    "  1 = Search for courses using a query                      \n"\
+    "  2 = Find most similar courses                             \n"\
+    "  3 = Print course vector model                             \n"\
+    "  4 = Print course information                              \n"\
+    "  5 = Quit                                                  \n"\
+    "                                                            \n"\
     "============================================================\n".format(total_docs)
 
     while True:
         sys.stderr.write(menu)
         option = raw_input("Enter Option: ")
         if option == "1":
-            get_and_show_retrieved_set()
+            search()
         elif option == "2":
-            code = raw_input("Enter Code: ")
-            print_course_vect(code)
+            find_similar_courses()
         elif option == "3":
+            code = raw_input("Enter Code: ")
+            print_course_vect(code.lower())
+        elif option == "4":
+            code = raw_input("Enter Code: ")
+            print_course_info(code.upper())
+        elif option == "5":
             exit(0)
         else:
-            sys.stderr.write("Input seems not right, try again\n")
+            sys.stderr.write("Invalid input, please try again\n")
 
 
 def initialize():
@@ -103,88 +115,46 @@ def useSynonyms():
                 synonyms_list.append(words_list)
                 index+=1
 
+def find_similar_courses():
+    #sys.stderr.write("Retrieving most similar courses to the selected one\n")
+    comp_type = raw_input("Type Course Code (XX.###.###): ")
+    try:
+        int_vector = course_vector[course_code2num[comp_type.lower()]]
+    except:
+        print("\n*Invalid course code*\n")
+        return
+    max_show = 15 #int(raw_input("Show how many matching documents (e.g. 20): "))    
+    get_retrieved_set(int_vector)
+    shw_retrieved_set(max_show, 0, int_vector, "Interactive Query")        
 
-def add_synonyms(qry_vect):
-    new_vect = defaultdict(int)
-    for key in qry_vect:
-        new_vect[key] = qry_vect[key]
-        if key in synonyms:
-            sim_words_list = synonyms_list[synonyms[key]]
-            for sim_word in sim_words_list:
-                if sim_word not in stoplist_hash and re.search("[a-zA-z]", sim_word):
-                    if sim_word in corp_freq_hash:
-                        new_vect[sim_word] = qry_vect[key]
-    print(new_vect)
-    return new_vect
 
-##########################################################
-## GET_AND_SHOW_RETRIEVED_SET
-##
-##  This function requests key retrieval parameters,
-##  including:
-##
-##  A) Is a query vector or document vector being used
-##     as the retrieval seed? Both are vector representations
-##     but they are stored in different data structures,
-##     and one may optionally want to treat them slightly
-##     differently.
-##
-##  B) Enter the number of the query or document vector to
-##     be used as the retrieval seed.
-##
-##     Alternately, one may wish to request a new query
-##     from standard input here (and call the appropriate
-##     tokenization, stemming and term-weighting routines).
-##
-##  C) Request the maximum number of retrieved documents
-##     to display.
-##
-##########################################################
-def get_and_show_retrieved_set():
-    menu = "Find documents similar to:  \n"\
-           "(1) a keyboard-interactive query    \n"\
-           "(2) a retrieval of most similar courses    \n"\
-
-    sys.stderr.write(menu)
-    comp_type = raw_input("Choice: ")
-
-    if re.match("[123]\s$", comp_type):
-        sys.stderr.write("The input is not valid. By default use option 1\n")
-        comp_type = "1"
-
-    #max_show = int(raw_input("Show how many matching documents (e.g. 20): "))
-    
-    if comp_type == "1":
-        sys.stderr.write("Interactive Keyboard Query to Document comparison\n")
-        int_vector = convert_keyboard_query()
-        get_retrieved_set(int_vector)
-        shw_retrieved_set(15, 0, int_vector, "Interactive Query")
-
-    if comp_type == "2":
-        sys.stderr.write("Retrieving most similar courses to the selected one\n")
-        comp_type = raw_input("Choice: ")
-        int_vector = course_vector[int(comp_type)]
-        get_retrieved_set(int_vector)
-        shw_retrieved_set(15, 0, int_vector, "Interactive Query")        
+def search():
+    max_show = 15 #int(raw_input("Show how many matching documents (e.g. 20): "))
+    int_vector = convert_keyboard_query()
+    if not int_vector:
+        print("\n*Invalid search (no results)*\n")
+        return
+    get_retrieved_set(int_vector)
+    shw_retrieved_set(max_show, 0, int_vector, "Interactive Query")
 
 
 def convert_keyboard_query():
-    qry = raw_input("Type in your query:")
+    qry = raw_input("Search Semeter.ly : ")
     words = qry.strip().split(' ')
     QUERY_WEIGHT = 1
     new_doc_vec = defaultdict(int)
     prev = ""
     for word in words:
         word = word.strip()
-        if re.search('[a-zA-Z]', word):
-            word = word.lower()
-            word = p.stem(word, 0, len(word)-1)
-            if word in new_doc_vec:
-                new_doc_vec[word] += QUERY_WEIGHT
-            elif word not in stoplist_hash and word in corp_freq_hash:
-                new_doc_vec[word] = QUERY_WEIGHT
-            else:
-                continue
+        word = word.lower()
+        word = p.stem(word, 0, len(word)-1)
+        if word in new_doc_vec:
+            new_doc_vec[word] += QUERY_WEIGHT
+        elif word not in stoplist_hash:
+            new_doc_vec[word] = QUERY_WEIGHT
+        else:
+            continue
+
         if prev:
             bigram = prev + " " + word
             if bigram in new_doc_vec:
@@ -195,6 +165,20 @@ def convert_keyboard_query():
                 continue
         prev = word
     return add_synonyms(new_doc_vec)
+
+
+def add_synonyms(qry_vect):
+    new_vect = defaultdict(int)
+    for key in qry_vect:
+        if key in corp_freq_hash:
+            new_vect[key] = qry_vect[key]
+        if key in synonyms:
+            sim_words_list = synonyms_list[synonyms[key]]
+            for sim_word in sim_words_list:
+                if sim_word not in stoplist_hash and re.search("[a-zA-z]", sim_word):
+                    if sim_word in corp_freq_hash:
+                        new_vect[sim_word] = qry_vect[key]
+    return new_vect
 
 ###########################################################
 ## GET_RETRIEVED_SET
@@ -273,6 +257,8 @@ def shw_retrieved_set(max_show, qry_num, my_qry_vector, comparison):
            "   ==========   ==========   ==================================\n".format(comparison, qry_num)
 
     sys.stderr.write(menu)
+    num_printed = 0
+    
     for index in range(max_show + 1):
         ind = res_vector[index]
         if comparison == "Query" and relevance_hash[qry_num][ind]:
@@ -284,7 +270,12 @@ def shw_retrieved_set(max_show, qry_num, my_qry_vector, comparison):
         title = titles_vector[ind][:47]
         code = course_num2code[ind]
         if similarity > 0.01:
-            sys.stderr.write(" {0:10.8f}   {1}   {2}\n".format(similarity, code, title))
+            sys.stderr.write(" {0:10.8f}   {1}   {2}\n".format(similarity, code.upper(), title))
+            num_printed += 1
+
+    if num_printed == 0:
+        print("\n\nNo results found.")
+        return
 
     show_terms = raw_input("\nShow the terms that overlap between the query and "\
         "retrieved docs (y/n): ").strip()
@@ -297,28 +288,6 @@ def shw_retrieved_set(max_show, qry_num, my_qry_vector, comparison):
                 cont = raw_input("\nContinue (y/n)?: ").strip()
                 if cont == 'n' or cont == 'N':
                     break
-
-##########################################################
-## SHOW_RELVNT
-##
-## This function should take the rank orders and similarity
-## arrays described in &show_retrieved_set and &comp_recall
-## and print out only the relevant documents, in an order
-## and manner of presentation very similar to &show_retrieved_set.
-##########################################################
-def show_relvnt(relevance_qry_hash, vect_num, my_qry_vector):
-    menu = "   ------------------------------------------------------------\n"\
-           "                        Relevant Documents       \n"\
-           "   ------------------------------------------------------------\n"\
-           "   Similarity   Course No.   Title                             \n"\
-           "   ==========   ==========   ==================================\n"
-
-    sys.stderr.write(menu)
-    for doc_num in docs_sorted_by_similarity:
-        sys.stderr.write("* ")
-        similarity = doc_simula[doc_num]
-        title = titles_vector[doc_num][:47]
-        sys.stderr.write(" {0:10.8f}   {1} \n".format(similarity, title))
 
 ########################################################
 ## SHOW_OVERLAP
@@ -377,10 +346,31 @@ def cosine_sim(vec1, vec2, vec1_norm = 0.0, vec2_norm = 0.0):
 
     # calculate the cross product
     cross_product = sum(vec1.get(term, 0) * vec2.get(term, 0) for term in vec1.keys())
-    return cross_product / math.sqrt(vec1_norm * vec2_norm)
+    try:
+        return cross_product / math.sqrt(vec1_norm * vec2_norm)
+    except:
+        return 0
 
 def print_course_vect(course_code):
-    print(course_vector[course_code2num[course_code]])
+    try:
+        print(course_vector[course_code2num[course_code]])
+    except:
+        print("\n*Invalid course number*\n")
+
+def print_course_info(course_code):
+    try:
+        print(course_code)
+        course = courses[course_code]
+        print "\n=========================================="
+        print "TITLE: %s\n" %course['title']
+        print "ID: %s\n"%course['ID']
+        print "CODE: %s\n"%course['code']
+        print "DESCRIPTION: %s\n" %course['description']
+        print "INSTRUCTORS: %s\n" %course['instructors']
+        print "TERM: %s\n" %course['term']
+        print "YEAR: %s\n" %course['year']
+    except:
+        print("\n*Invalid course number*\n")
 
 def read_json(file_name):
     json_object = open(file_name).read()

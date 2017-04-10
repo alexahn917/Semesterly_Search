@@ -35,14 +35,14 @@ def main():
             stoplist_hash.add(line.strip())
 
     # Weighting terms by area
+    wTITLE = 20
     wCODE = 10
-    wTITLE = 5
+    wINSTRUCTORS = 5
     wDESCRIPTION = 3
-    wINSTRUCTORS = 2
     wTERM = 1
-    wYEAR = 1
-    
+    wYEAR = 1    
     idx = 0
+    
     # create vector models
     for code, course in courses.iteritems():
 
@@ -50,12 +50,18 @@ def main():
         course_vect = defaultdict(int)
         course_vector.append(course_vect)
         titles_vector.append(course['title'])
+        code = code.lower()
         course_num2code.append(code)
         course_code2num[code] = idx
         idx+=1
+
         # (1) read code
         course_vect[code] += wCODE
         course_vect[code[3:]] += wCODE
+        docs_freq_hash[code] += 1
+        corp_freq_hash[code] += 1
+        docs_freq_hash[code[3:]] += 1
+        corp_freq_hash[code[3:]] += 1        
 
         # (2) read title
         vectorize_string(course['title'], course_vect, wTITLE)
