@@ -1,13 +1,12 @@
 import json
 import re
-from PorterStemmer import PorterStemmer
 from pprint import pprint
 
 def main():
-    json_data = open("courses.json").read()
-    json_data = json_loads_byteified(json_data)    
+    json_data = open("json_files/courses.json").read()
+    json_data = json_loads_byteified(json_data)
     courses = {}
-    ID = 1
+    ID = 0
     ND=0
     NI=0
     i=0
@@ -71,20 +70,19 @@ def main():
     print "Number of missing descriptions: %d" %ND
     print "Number of missing instructor names: %d" %NI
 
-    with open("courses_dict.json", "w") as f:
+    with open("json_files/preprocessed_courses.json", "w") as f:
         json.dump(courses, f, indent=4)
 
-def print_courses(self, courses):        
-    if False:
-        for key, course in courses.iteritems():
-            print "\n=========================================="
-            print "ID: %s"%course['ID']
-            print "CODE: %s"%course['code']
-            print "TITLE: %s" %course['title']
-            print "DESCRIPTION: %s" %course['description']
-            print "INSTRUCTORS: %s" %course['instructors']
-            print "TERM: %s" %course['term']
-            print "YEAR: %s" %course['year']
+def print_courses(courses):
+    for key, course in courses.iteritems():
+        print "\n=========================================="
+        print "ID: %s"%course['ID']
+        print "CODE: %s"%course['code']
+        print "TITLE: %s" %course['title']
+        print "DESCRIPTION: %s" %course['description']
+        print "INSTRUCTORS: %s" %course['instructors']
+        print "TERM: %s" %course['term']
+        print "YEAR: %s" %course['year']
 
 def json_load_byteified(file_handle):
     return _byteify(
