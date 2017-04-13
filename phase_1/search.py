@@ -35,13 +35,13 @@ def main():
     global corp_freq_hash
     
     initialize()
-    courses = read_json("json_files/preprocessed_courses.json")
-    course_vector = read_json("json_files/course_vector.json")
-    titles_vector = read_json("json_files/titles_vector.json")
-    course_code2num = read_json("json_files/course_code2num.json")
-    course_num2code = read_json("json_files/course_num2code.json")
-    docs_freq_hash = read_json("json_files/docs_freq_hash.json")
-    corp_freq_hash = read_json("json_files/corp_freq_hash.json")
+    courses = read_json("../json_files/preprocessed_courses.json")
+    course_vector = read_json("../json_files/course_vector.json")
+    titles_vector = read_json("../json_files/titles_vector.json")
+    course_code2num = read_json("../json_files/course_code2num.json")
+    course_num2code = read_json("../json_files/course_num2code.json")
+    docs_freq_hash = read_json("../json_files/docs_freq_hash.json")
+    corp_freq_hash = read_json("../json_files/corp_freq_hash.json")
     total_docs = len(course_vector)
 
     menu = \
@@ -84,7 +84,7 @@ def initialize():
     global stoplist_hash
     p = PorterStemmer()
     stoplist_hash = set()
-    for line in open("txt_files/common_words.stemmed", 'r'):
+    for line in open("../txt_files/common_words.stemmed", 'r'):
         if line:
             stoplist_hash.add(line.strip())
     useSynonyms()
@@ -99,7 +99,7 @@ def useSynonyms():
     useThesures = True
     if useThesures:
         p = PorterStemmer()
-        with open("txt_files/synonyms_short.txt", 'r') as f:
+        with open("../txt_files/synonyms_short.txt", 'r') as f:
             lines = f.read().split('$')
             index = 0
             for line in lines:

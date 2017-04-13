@@ -6,7 +6,7 @@ from pprint import pprint
 import math
 
 def main():
-    courses = open("json_files/preprocessed_courses.json").read()
+    courses = open("../json_files/preprocessed_courses.json").read()
     courses = json_loads_byteified(courses)
 
     # set up global variables (read_only)
@@ -30,7 +30,7 @@ def main():
 
     # create stoplist    
     stoplist_hash = set()
-    for line in open("txt_files/common_words.stemmed", 'r'):
+    for line in open("../txt_files/common_words.stemmed", 'r'):
         if line:
             stoplist_hash.add(line.strip())
 
@@ -87,22 +87,22 @@ def main():
                 course_vector[i][token] *= math.log(total_docs / 1)
 
     # write to json files
-    with open("json_files/course_vector.json", "w") as f:
+    with open("../json_files/course_vector.json", "w") as f:
         json.dump(course_vector, f, indent=4)
 
-    with open("json_files/titles_vector.json", "w") as f:
+    with open("../json_files/titles_vector.json", "w") as f:
         json.dump(titles_vector, f, indent=4)
 
-    with open("json_files/course_code2num.json", "w") as f:
+    with open("../json_files/course_code2num.json", "w") as f:
         json.dump(course_code2num, f, indent=4)
     
-    with open("json_files/course_num2code.json", "w") as f:
+    with open("../json_files/course_num2code.json", "w") as f:
         json.dump(course_num2code, f, indent=4)        
 
-    with open("json_files/docs_freq_hash.json", "w") as f:
+    with open("../json_files/docs_freq_hash.json", "w") as f:
         json.dump(docs_freq_hash, f, indent=4)
     
-    with open("json_files/corp_freq_hash.json", "w") as f:
+    with open("../json_files/corp_freq_hash.json", "w") as f:
         json.dump(corp_freq_hash, f, indent=4)
 
 ########################################################

@@ -3,7 +3,7 @@ import re
 from pprint import pprint
 
 def main():
-    json_data = open("json_files/courses.json").read()
+    json_data = open("../json_files/courses.json").read()
     json_data = json_loads_byteified(json_data)
     courses = {}
     ID = 0
@@ -70,7 +70,7 @@ def main():
     print "Number of missing descriptions: %d" %ND
     print "Number of missing instructor names: %d" %NI
 
-    with open("json_files/preprocessed_courses.json", "w") as f:
+    with open("../json_files/preprocessed_courses.json", "w") as f:
         json.dump(courses, f, indent=4)
 
 def print_courses(courses):
