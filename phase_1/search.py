@@ -1,3 +1,4 @@
+import pickle
 import sys
 import re
 import os
@@ -14,35 +15,48 @@ from collections import defaultdict
 doc_simula = []
 res_vector = []
 courses = None
-course_vector = None
-titles_vector = None
-course_code2num = None
-course_num2code = None
+
+COURSE_VECTOR = None
+CODE_2_ID = None
+ID_2_CODE = None
+
 docs_freq_hash = None
 corp_freq_hash = None
 stoplist_hash = None
+
 synonyms = None
 synonyms_list = None
-p = None
 
-def main():
+p = None
+N = None
+
+TITLES = None
+
+def read_files():
+    global N
     global courses
-    global course_vector
-    global titles_vector
-    global course_code2num
-    global course_num2code
+    global COURSE_VECTOR
+    global COURSE_VECTOR_NORMS
+    global CODE_2_ID
+    global ID_2_CODE
     global docs_freq_hash
     global corp_freq_hash
+    global TITLES
     
-    initialize()
     courses = read_json("../json_files/preprocessed_courses.json")
-    course_vector = read_json("../json_files/course_vector.json")
-    titles_vector = read_json("../json_files/titles_vector.json")
-    course_code2num = read_json("../json_files/course_code2num.json")
-    course_num2code = read_json("../json_files/course_num2code.json")
+    COURSE_VECTOR = read_json("../json_files/COURSE_VECTOR.json")
+    COURSE_VECTOR_NORMS = read_json("../json_files/COURSE_VECTOR_NORMS.json")    
+    TITLES = read_json("../json_files/TITLES.json")
+    CODE_2_ID = read_json("../json_files/CODE_2_ID.json")
+    ID_2_CODE = read_json("../json_files/ID_2_CODE.json")
     docs_freq_hash = read_json("../json_files/docs_freq_hash.json")
     corp_freq_hash = read_json("../json_files/corp_freq_hash.json")
-    total_docs = len(course_vector)
+    N = len(COURSE_VECTOR)
+
+
+def main():
+    read_files()
+    initialize()
 
     menu = \
     "============================================================\n"\
@@ -58,7 +72,7 @@ def main():
     "  4 = Print course information                              \n"\
     "  5 = Quit                                                  \n"\
     "                                                            \n"\
-    "============================================================\n".format(total_docs)
+    "============================================================\n".format(N)
 
     while True:
         sys.stderr.write(menu)
@@ -115,38 +129,25 @@ def useSynonyms():
                 synonyms_list.append(words_list)
                 index+=1
 
-def find_similar_courses():
-    #sys.stderr.write("Retrieving most similar courses to the selected one\n")
-    comp_type = raw_input("Type Course Code (XX.###.###): ")
-    try:
-        int_vector = course_vector[course_code2num[comp_type.lower()]]
-    except:
-        print("\n*Invalid course code*\n")
-        return
-    max_show = 15 #int(raw_input("Show how many matching documents (e.g. 20): "))    
-    get_retrieved_set(int_vector)
-    shw_retrieved_set(max_show, 0, int_vector, "Interactive Query")        
-
 
 def search():
     max_show = 15 #int(raw_input("Show how many matching documents (e.g. 20): "))
-    int_vector = convert_keyboard_query()
-    if not int_vector:
+    qry, qry_vect = convert_keyboard_query()
+    if not qry_vect:
         print("\n*Invalid search (no results)*\n")
         return
-    get_retrieved_set(int_vector)
-    shw_retrieved_set(max_show, 0, int_vector, "Interactive Query")
+    get_retrieved_set(qry, qry_vect)
+    shw_retrieved_set(max_show, qry_vect)
 
 
 def convert_keyboard_query():
-    qry = raw_input("Search Semeter.ly : ")
+    qry = raw_input("Search Semeter.ly : ").lower()
     words = qry.strip().split(' ')
     QUERY_WEIGHT = 1
     new_doc_vec = defaultdict(int)
     prev = ""
     for word in words:
         word = word.strip()
-        word = word.lower()
         word = p.stem(word, 0, len(word)-1)
         if word in new_doc_vec:
             new_doc_vec[word] += QUERY_WEIGHT
@@ -164,7 +165,7 @@ def convert_keyboard_query():
             else:
                 continue
         prev = word
-    return add_synonyms(new_doc_vec)
+    return (qry, add_synonyms(new_doc_vec))
 
 
 def add_synonyms(qry_vect):
@@ -180,97 +181,55 @@ def add_synonyms(qry_vect):
                         new_vect[sim_word] = qry_vect[key]
     return new_vect
 
-###########################################################
-## GET_RETRIEVED_SET
-##
-##  Parameters:
-##
-##  my_qry_vector    - the query vector to be compared with the
-##                  document set. May also be another document
-##                  vector.
-##
-##  This function computes the document similarity between the
-##  given vector "my_qry_vector" and all vectors in the document
-##  collection storing these values in the array "doc_simula"
-##
-##  An array of the document numbers is then sorted by this
-##  similarity function, forming the rank order of documents
-##  for use in the retrieval set.
-##
-##  The similarity will be
-##  sorted in descending order.
-##########################################################
-def get_retrieved_set(my_qry_vector):
-    # "global" variable might not be a good choice in python, but this
-    # makes us consistant with original perl script
-    global doc_simula, res_vector
-    
-    tot_number = len(course_vector)
 
+def find_similar_courses():
+    #sys.stderr.write("Retrieving most similar courses to the selected one\n")
+    comp_type = raw_input("Type Course Code (XX.###.###): ")
+    try:
+        course_vect = COURSE_VECTOR[CODE_2_ID[comp_type.lower()]]
+    except:
+        print("\n*Invalid course code*\n")
+        return
+    max_show = 15 #int(raw_input("Show how many matching documents (e.g. 20): "))    
+    get_retrieved_set(None, course_vect)
+    shw_retrieved_set(max_show, course_vect)        
+
+
+
+def get_retrieved_set(qry, my_qry_vector):
+    global doc_simula, res_vector
+    N = len(COURSE_VECTOR)
     doc_simula = []   # insure that storage vectors are empty before we
     res_vector = []   # calculate vector similarities
+    for index in range(N):
+        score = cosine_sim(my_qry_vector, COURSE_VECTOR[index], 0.0, COURSE_VECTOR_NORMS[index])
+        count = 0
+        for q in qry.split():
+            if q in TITLES[index].lower():
+                count+=1
+        if count == len(qry.split()):
+            score+=1
+        doc_simula.append(score)
+    res_vector = sorted(range(N), key = lambda x: -doc_simula[x])
 
-    for index in range(tot_number):
-        doc_simula.append(cosine_sim(my_qry_vector, course_vector[index]))
 
-    res_vector = sorted(range(tot_number), key = lambda x: -doc_simula[x])
-
-############################################################
-## SHW_RETRIEVED_SET
-##
-## Assumes the following global data structures have been
-## initialized, based on the results of "get_retrieved_set".
-##
-## 1) res_vector - contains the document numbers sorted in
-##                  rank order
-## 2) doc_simula - The similarity measure for each document,
-##                  computed by &get_retrieved_set.
-##
-## Also assumes that the following have been initialized in
-## advance:
-##
-##       titles[ doc_num ]    - the document title for a
-##                                document number, $doc_num
-##       relevance_hash[ qry_num ][ doc_num ]
-##                              - is doc_num relevant given
-##                                query number, qry_num
-##
-## Parameters:
-##   max_show   - the maximum number of matched documents
-##                 to display.
-##   qry_num    - the vector number of the query
-##   qry_vect   - the query vector (passed by reference)
-##   comparison - "Query" or "Document" (type of vector
-##                 being compared to)
-##
-## In the case of "Query"-based retrieval, the relevance
-## judgements for the returned set are displayed. This is
-## ignored when doing document-to-document comparisons, as
-## there are nor relevance judgements.
-##
-############################################################
-def shw_retrieved_set(max_show, qry_num, my_qry_vector, comparison):
+def shw_retrieved_set(max_show, my_qry_vector):
     menu = "   ************************************************************\n"\
            "                        Most Similar Courses                   \n"\
            "   ************************************************************\n"\
            "   Similarity   Course No.   Title                             \n"\
-           "   ==========   ==========   ==================================\n".format(comparison, qry_num)
+           "   ==========   ==========   ==================================\n"
 
     sys.stderr.write(menu)
     num_printed = 0
     
     for index in range(max_show + 1):
         ind = res_vector[index]
-        if comparison == "Query" and relevance_hash[qry_num][ind]:
-            sys.stderr.write("* ")
-        else:
-            sys.stderr.write("  ")
-
         similarity = doc_simula[ind]
-        title = titles_vector[ind][:47]
-        code = course_num2code[ind]
+        title = TITLES[ind][:47]
+        code = ID_2_CODE[ind]
         if similarity > 0.01:
-            sys.stderr.write(" {0:10.8f}   {1}   {2}\n".format(similarity, code.upper(), title))
+            sys.stderr.write("   {0:10.8f}   {1}   {2}\n".format(similarity, code.upper(), title))
             num_printed += 1
 
     if num_printed == 0:
@@ -283,57 +242,27 @@ def shw_retrieved_set(max_show, qry_num, my_qry_vector, comparison):
     if show_terms != 'n' and show_terms != 'N':
         for index in range(max_show + 1):
             ind = res_vector[index]
-            show_overlap(my_qry_vector, course_vector[ind], qry_num, ind)
+            show_overlap(my_qry_vector, COURSE_VECTOR[ind], ind)
             if (index % 5 == 4):
                 cont = raw_input("\nContinue (y/n)?: ").strip()
                 if cont == 'n' or cont == 'N':
                     break
 
-########################################################
-## SHOW_OVERLAP
-##
-## Parameters:
-##  - Two vectors (qry_vect and doc_vect), passed by
-##    reference.
-##  - The number of the vectors for display purposes
-##
-## PARTIALLY IMPLEMENTED:
-##
-## This function should show the terms that two vectors
-## have in common, the relative weights of these terms
-## in the two vectors, and any additional useful information
-## such as the document frequency of the terms, etc.
-##
-## Useful for understanding the reason why documents
-## are judged as relevant.
-##
-## Present in a sorted order most informative to the user.
-##
-########################################################
-def show_overlap(my_qry_vector, my_course_vector, qry_num, doc_num):
+
+def show_overlap(my_qry_vector, my_COURSE_VECTOR, ind):
     info = "============================================================\n"\
-           "{0:15s}  {1:8d}   {2:8d}\t{3}\n"\
-           "============================================================\n".format(
-            "Vector Overlap", qry_num, doc_num, "Docfreq")
+           "                    OVERLAPPING TERMS                       \n"\
+           "============================================================\n"
+
     sys.stderr.write(info)
     for term_one, weight_one in my_qry_vector.items():
-        if my_course_vector.get(term_one, 0):
+        if my_COURSE_VECTOR.get(term_one, 0):
             info =  "{0:15s}  {1:f}   {2:8f}\t{3}\n".format(
-                term_one, weight_one, my_course_vector[term_one], corp_freq_hash[term_one])
+                term_one, weight_one, my_COURSE_VECTOR[term_one], corp_freq_hash[term_one])
             sys.stderr.write(info)
+    print(cosine_sim(my_qry_vector, my_COURSE_VECTOR))
+    #pdb.set_trace()
 
-
-########################################################
-## COSINE_SIM
-##
-## Computes the cosine similarity for two vectors
-## represented as associate arrays. You can also pass the
-## norm as parameter
-##
-## Note: You may do it in a much efficient way like
-## precomputing norms ahead or using packages like
-## "numpy", below provide naive implementation of that
-########################################################
 def cosine_sim(vec1, vec2, vec1_norm = 0.0, vec2_norm = 0.0):
     if not vec1_norm:
         vec1_norm = sum(v * v for v in vec1.values())
@@ -345,15 +274,31 @@ def cosine_sim(vec1, vec2, vec1_norm = 0.0, vec2_norm = 0.0):
         vec1, vec2 = vec2, vec1
 
     # calculate the cross product
+#    for i,v in vec1.items():
+#        if i in vec2:
+#            print(i)
+#            print("vec1:", v)
+#            print("vec2:", vec2[i])
+
     cross_product = sum(vec1.get(term, 0) * vec2.get(term, 0) for term in vec1.keys())
+
+    #print(cross_product)
+    
     try:
         return cross_product / math.sqrt(vec1_norm * vec2_norm)
     except:
         return 0
 
+
+def get_course_vect(course_code):
+    try:
+        return COURSE_VECTOR[CODE_2_ID[course_code]]
+    except:
+        return None
+
 def print_course_vect(course_code):
     try:
-        print(course_vector[course_code2num[course_code]])
+        print(COURSE_VECTOR[CODE_2_ID[course_code]])
     except:
         print("\n*Invalid course number*\n")
 

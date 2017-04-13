@@ -1,3 +1,4 @@
+import numpy as np
 import json
 import re
 from collections import defaultdict
@@ -14,12 +15,13 @@ def main():
     global stoplist_hash
     global docs_freq_hash
     global corp_freq_hash
-    
+
     # containers for courses
-    course_vector = []
-    titles_vector  = []
-    course_code2num = {}
-    course_num2code = []
+    COURSE_VECTOR = []
+    COURSE_VECTOR_NORMS = []
+    TITLES  = []
+    CODE_2_ID = {}
+    ID_2_CODE = []
     
     # frequency hashes
     docs_freq_hash = defaultdict(int)
@@ -28,7 +30,7 @@ def main():
     # porter stemming
     poter_stemmer = PorterStemmer()
 
-    # create stoplist    
+    # create stoplist
     stoplist_hash = set()
     for line in open("../txt_files/common_words.stemmed", 'r'):
         if line:
@@ -48,11 +50,11 @@ def main():
 
         # create course vector
         course_vect = defaultdict(int)
-        course_vector.append(course_vect)
-        titles_vector.append(course['title'])
+        COURSE_VECTOR.append(course_vect)
+        TITLES.append(course['title'])
         code = code.lower()
-        course_num2code.append(code)
-        course_code2num[code] = idx
+        ID_2_CODE.append(code)
+        CODE_2_ID[code] = idx
         idx+=1
 
         # (1) read code
@@ -79,25 +81,31 @@ def main():
     total_docs = idx
     
     # apply TD_IDF weighting
-    for i in range(len(course_vector)):
-        for token in course_vector[i]:
+    for i in range(len(COURSE_VECTOR)):
+        for token in COURSE_VECTOR[i]:
             if token in docs_freq_hash:
-                course_vector[i][token] *= math.log(total_docs / docs_freq_hash[token])
+                COURSE_VECTOR[i][token] *= math.log(total_docs / docs_freq_hash[token])
             else:
-                course_vector[i][token] *= math.log(total_docs / 1)
+                COURSE_VECTOR[i][token] *= math.log(total_docs / 1)
+
+    for i in range(len(COURSE_VECTOR)):
+        COURSE_VECTOR_NORMS.append(sum(v * v for v in COURSE_VECTOR[i].values()))
 
     # write to json files
-    with open("../json_files/course_vector.json", "w") as f:
-        json.dump(course_vector, f, indent=4)
+    with open("../json_files/COURSE_VECTOR.json", "w") as f:
+        json.dump(COURSE_VECTOR, f, indent=4)
 
-    with open("../json_files/titles_vector.json", "w") as f:
-        json.dump(titles_vector, f, indent=4)
+    with open("../json_files/COURSE_VECTOR_NORMS.json", "w") as f:
+        json.dump(COURSE_VECTOR_NORMS, f, indent=4)
 
-    with open("../json_files/course_code2num.json", "w") as f:
-        json.dump(course_code2num, f, indent=4)
+    with open("../json_files/TITLES.json", "w") as f:
+        json.dump(TITLES, f, indent=4)
+
+    with open("../json_files/CODE_2_ID.json", "w") as f:
+        json.dump(CODE_2_ID, f, indent=4)
     
-    with open("../json_files/course_num2code.json", "w") as f:
-        json.dump(course_num2code, f, indent=4)        
+    with open("../json_files/ID_2_CODE.json", "w") as f:
+        json.dump(ID_2_CODE, f, indent=4)        
 
     with open("../json_files/docs_freq_hash.json", "w") as f:
         json.dump(docs_freq_hash, f, indent=4)
