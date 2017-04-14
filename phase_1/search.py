@@ -250,17 +250,19 @@ def shw_retrieved_set(max_show, my_qry_vector):
 
 
 def show_overlap(my_qry_vector, my_COURSE_VECTOR, ind):
-    info = "============================================================\n"\
-           "                    OVERLAPPING TERMS                       \n"\
-           "============================================================\n"
+    info = "\n=============================================================\n"\
+           " OVERLAPPING TERMS for\n \"{0:10s}\"                         \n"\
+           "=============================================================\n"\
+           "TERM        QRY_WEIGHT  COURSE_WEIGHT    # of TERMS IN CORPUS\n"\
+           "-------------------------------------------------------------\n".format(TITLES[ind])
 
     sys.stderr.write(info)
     for term_one, weight_one in my_qry_vector.items():
         if my_COURSE_VECTOR.get(term_one, 0):
-            info =  "{0:15s}  {1:f}   {2:8f}\t{3}\n".format(
+            info =  "{0:10s}  {1:f}     {2:8f}\t {3}\n".format(
                 term_one, weight_one, my_COURSE_VECTOR[term_one], corp_freq_hash[term_one])
             sys.stderr.write(info)
-    print(cosine_sim(my_qry_vector, my_COURSE_VECTOR))
+    print("-> Similarity Score: %.10f" %cosine_sim(my_qry_vector, my_COURSE_VECTOR))
     #pdb.set_trace()
 
 def cosine_sim(vec1, vec2, vec1_norm = 0.0, vec2_norm = 0.0):
