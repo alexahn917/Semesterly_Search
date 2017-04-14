@@ -203,12 +203,13 @@ def get_retrieved_set(qry, my_qry_vector):
     res_vector = []   # calculate vector similarities
     for index in range(N):
         score = cosine_sim(my_qry_vector, COURSE_VECTOR[index], 0.0, COURSE_VECTOR_NORMS[index])
-        count = 0
-        for q in qry.split():
-            if q in TITLES[index].lower():
-                count+=1
-        if count == len(qry.split()):
-            score+=1
+        if qry:
+            count = 0
+            for q in qry.split():
+                if q in TITLES[index].lower():
+                    count+=1
+            if count == len(qry.split()):
+                score+=1
         doc_simula.append(score)
     res_vector = sorted(range(N), key = lambda x: -doc_simula[x])
 
@@ -296,6 +297,7 @@ def get_course_vect(course_code):
     try:
         return COURSE_VECTOR[CODE_2_ID[course_code]]
     except:
+        print("\n*Invalid course number*\n")
         return None
 
 def print_course_vect(course_code):
