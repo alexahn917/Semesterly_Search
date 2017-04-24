@@ -43,7 +43,7 @@ def read_files():
     global corp_freq_hash
     global TITLES
     
-    courses = read_json("../json_files/preprocessed_courses.json")
+    courses = read_json("../json_files/preprocessed_courses_fa2017.json")
     COURSE_VECTOR = read_json("../json_files/COURSE_VECTOR.json")
     COURSE_VECTOR_NORMS = read_json("../json_files/COURSE_VECTOR_NORMS.json")    
     TITLES = read_json("../json_files/TITLES.json")

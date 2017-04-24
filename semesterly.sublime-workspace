@@ -4,6 +4,82 @@
 		"selected_items":
 		[
 			[
+				"course",
+				"COURSE_VECTOR"
+			],
+			[
+				"course_ve",
+				"COURSE_VECTOR_NORMS"
+			],
+			[
+				"course_",
+				"course_vector"
+			],
+			[
+				"cross",
+				"cross_product"
+			],
+			[
+				"docs_",
+				"docs_freq_hash"
+			],
+			[
+				"COU",
+				"COURSE_CV"
+			],
+			[
+				"ID",
+				"ID_2_CODE"
+			],
+			[
+				"titles",
+				"TITLES_VECTOR"
+			],
+			[
+				"CODE",
+				"CODE_2_ID"
+			],
+			[
+				"COURSE",
+				"COURSE_VECTOR"
+			],
+			[
+				"COURSE_",
+				"COURSE_VECTOR_NORMS"
+			],
+			[
+				"Titles",
+				"TITLES_VECTOR"
+			],
+			[
+				"Cour",
+				"COURSE_VECTOR"
+			],
+			[
+				"TITLES",
+				"TITLES_VECTOR"
+			],
+			[
+				"TITLES_VEC",
+				"TITLES_VECTOR_NORMS"
+			],
+			[
+				"Couse_ve",
+				"COURSE_VECTOR"
+			],
+			[
+				"q",
+				"qry_type"
+			],
+			[
+				"tit",
+				"titles_qry"
+			],
+			[
+				"course_vec",
+				"COURSE_VECTOR"
+			],
+			[
 				"machin",
 				"matching_title"
 			],
@@ -20,16 +96,8 @@
 				"matching_title"
 			],
 			[
-				"titles",
-				"titles_vector"
-			],
-			[
 				"doc",
 				"doc_vect"
-			],
-			[
-				"course_",
-				"course_code"
 			],
 			[
 				"course_code",
@@ -38,10 +106,6 @@
 			[
 				"sy",
 				"synonyms"
-			],
-			[
-				"course",
-				"course_code"
 			],
 			[
 				"title",
@@ -328,72 +392,19 @@
 	"buffers":
 	[
 		{
-			"file": "search.py",
+			"file": "phase_1/search.py",
 			"settings":
 			{
-				"buffer_size": 14227,
+				"buffer_size": 11601,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "json_files/courses.json",
+			"file": "phase_1/vectorize_json.py",
 			"settings":
 			{
-				"buffer_size": 25507917,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "run.sh",
-			"settings":
-			{
-				"buffer_size": 73,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vectorize_json.py",
-			"settings":
-			{
-				"buffer_size": 5669,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "read_JSON.py",
-			"settings":
-			{
-				"buffer_size": 4068,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 1111,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "json_files/course_vector.json",
-			"settings":
-			{
-				"buffer_size": 24071691,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "txt_files/synonyms_short.txt",
-			"settings":
-			{
-				"buffer_size": 92,
+				"buffer_size": 5900,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -432,21 +443,33 @@
 	"expanded_folders":
 	[
 		"/Users/alex/Desktop/Semesterly",
-		"/Users/alex/Desktop/Semesterly/json_files",
-		"/Users/alex/Desktop/Semesterly/txt_files",
-		"/Users/alex/Desktop/Semesterly/write_up"
+		"/Users/alex/Desktop/Semesterly/phase_1",
+		"/Users/alex/Desktop/Semesterly/phase_2"
 	],
 	"file_history":
 	[
-		"/Users/alex/Desktop/Semesterly/search_engine.py",
+		"/Users/alex/Desktop/Semesterly/phase_2/search.py",
+		"/Users/alex/Desktop/Semesterly/phase_1/vectorize_json.py",
+		"/Users/alex/Desktop/Semesterly/phase_1/search.py",
+		"/Users/alex/Desktop/Semesterly/phase_2/read_json.py",
+		"/Users/alex/Desktop/Semesterly/phase_2/vectorize_json.py",
+		"/Users/alex/Desktop/Semesterly/phase_2/run.sh",
+		"/Users/alex/Desktop/Semesterly/phase_2/PorterStemmer.py",
+		"/Users/alex/Desktop/Semesterly/README.md",
+		"/Users/alex/Desktop/Semesterly/txt_files/synonyms_short.txt",
+		"/Users/alex/Desktop/Semesterly/phase_1/read_json.py",
+		"/Users/alex/Desktop/Semesterly/json_files/course_vector.json",
+		"/Users/alex/Desktop/Semesterly/json_files/courses.json",
+		"/Users/alex/Desktop/Semesterly/read_JSON.py",
+		"/Users/alex/Desktop/Semesterly/vectorize_json.py",
 		"/Users/alex/Desktop/Semesterly/run.sh",
+		"/Users/alex/Desktop/Semesterly/search.py",
+		"/Users/alex/Desktop/Semesterly/search_engine.py",
 		"/Users/alex/Desktop/Semesterly/baseline_search_engine.py",
 		"/Users/alex/Desktop/Semesterly/json_files/corp_freq_hash.json",
-		"/Users/alex/Desktop/Semesterly/json_files/course_vector.json",
 		"/Users/alex/Desktop/Semesterly/vector1.py",
 		"/Users/alex/Desktop/Semesterly/courses.json",
 		"/Users/alex/Desktop/Semesterly/courses_dict.json",
-		"/Users/alex/Desktop/Semesterly/read_JSON.py",
 		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/BayesClasses.py",
 		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/2/hw2b/CliqueTree.py",
 		"/Users/alex/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/3/hw3b/hw3b-files/topwords.py",
@@ -555,7 +578,7 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -569,6 +592,96 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"find_similar_courses",
+			"get_course_vect",
+			"curr",
+			"TextView",
+			"findViewById",
+			"EditText",
+			"settings",
+			"title",
+			"TITLE",
+			"title",
+			"Title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"title",
+			"TITLE",
+			"titles",
+			"TITLES",
+			"titles",
+			"TITLES",
+			"titles",
+			"TITLES",
+			"COURSE_VECTOR",
+			"course_vector",
+			"COURSE_VECTOR",
+			"course_vector",
+			"titles_vector",
+			"titles",
+			"TITLES",
+			"course_vector",
+			"COURSE_VECTOR",
+			"course_vector",
+			":\n",
+			"poter_stemmer",
+			"course_num2code",
+			"course_code2num",
+			"course_num2code",
+			"course_code2num",
+			"course_vector",
+			"total_docs",
+			"get_retrieved_set",
+			"introduct",
+			"\n{'",
+			"introduct",
+			"java",
+			"pdf",
+			"shw_retrieved_set",
+			"tot_number",
+			"shw_retrieved_set",
+			"vec1",
+			"total_docs",
+			"my_COURSE_VECTOR",
+			"COURSES",
+			"CODE_2_ID",
+			"courses",
+			"course_code2num",
+			":\n",
+			"calculate_similarity",
+			"TITLES_VECTOR_NORM",
+			"TITLES_VECTOR",
+			"COURSE_VECTOR_NORMS",
+			"None",
+			"COURSE_VECTOR",
+			"vec1",
+			"tot_number",
+			"my_qry_vector",
+			"COURSE_CV",
+			"course_vector",
+			"CODE_2_ID",
+			"convert_keyboard_query",
+			"dump",
+			"pkl",
+			"CODE_2_ID",
+			"course_cv",
+			"COURSE_CV",
+			"course_cv",
+			"global",
+			"titles_vector",
+			"course_vector",
+			"COURSE_VECTOR",
+			"course_vector",
+			"codes_vector",
+			"codes_count_vect",
+			"code_elems",
+			"    \n",
+			"json_files",
 			"convert_keyboard_query",
 			"invali",
 			"print",
@@ -606,97 +719,7 @@
 			"corp_freq_hash",
 			"doc_vector",
 			"5669",
-			"7913",
-			"5668",
-			"\\n",
-			"\"code\": \"(02)\"",
-			"section",
-			"line",
-			"description",
-			"GET_AND_SHOW_RETRIEVED_SET",
-			"get_and_show_retrieved_set",
-			"menu",
-			"total_qrys",
-			"ind",
-			"idx",
-			"course_title",
-			"    \"kind\": \"section\",",
-			"    \"kind\": \"course\",",
-			"first_seg",
-			"kind",
-			"PH.120.820",
-			"line",
-			"title",
-			"Title",
-			"title",
-			"Title",
-			"title",
-			"TITLE",
-			"title",
-			"TITLE",
-			"title",
-			"TITLE",
-			"title",
-			"TITLE",
-			"common_vars",
-			"_nam",
-			"sys",
-			"index",
-			"cpd",
-			"_cpd_index",
-			"_cpd",
-			"print",
-			"self.get_name",
-			"get_cardinatiry",
-			"cpd_index",
-			"self._cliques[clique_name]._factors",
-			"self._cliques[clique_name]._factors.",
-			"Action_0,PositionRow_0,PositionCol_0,PositionRow_1",
-			"Action_0,PositionCol_0,PositionRow_0,PositionRow_1",
-			"extention",
-			"diff",
-			"self.",
-			"clique_tree_file",
-			"15x15",
-			"ObserveLandmark2_N_8,PositionRow_8,PositionCol_8",
-			"Action_7,PositionRow_7,PositionCol_7,PositionRow_8",
-			"num_nodes",
-			"ClusterGraph",
-			"Action_2,PositionRow_2,PositionCol_2,PositionRow_3 -- ObserveLandmark1_W_2,PositionRow_2,PositionCol_2\n",
-			"Action_8,PositionRow_8,PositionCol_8,PositionRow_9 -- ObserveLandmark2_N_8,PositionRow_8,PositionCol_8\n",
-			"Action_8,PositionCol_8,PositionRow_9,PositionCol_9 -- ObserveWall_N_9,PositionRow_9,PositionCol_9\n",
-			"Action_8,PositionRow_8,PositionCol_9,PositionRow_9 -- ObserveLandmark2_E_9,PositionRow_9,PositionCol_9",
-			"Action_8,PositionRow_8,PositionCol_9,PositionRow_9 -- ObserveLandmark2_E_9,PositionRow_9,PositionCol_9\n",
-			"Action_9,PositionRow_9,PositionCol_9,PositionRow_10 -- ObserveLandmark1_S_9,PositionRow_9,PositionCol_9\n",
-			"Action_7,PositionRow_7,PositionCol_7,PositionRow_8 -- ObserveLandmark1_W_7,PositionRow_7,PositionCol_7\n",
-			"Action_0,PositionRow_0,PositionCol_0,PositionRow_1 -- Action_0,PositionRow_0,PositionCol_1,PositionRow_1",
-			"Action_0,PositionRow_0,PositionCol_0,PositionRow_1 -- Action_0,PositionRow_0,PositionCol_1,PositionRow_1\n",
-			"Action_1,PositionRow_1,PositionCol_1,PositionRow_2 -- Obs_1,PositionRow_1,PositionCol_1",
-			"variables",
-			"Action_0,PositionCol_0,PositionRow_1,PositionCol_1\n",
-			"grid_size",
-			"15x15",
-			"distribution",
-			"Distribution",
-			"t1000",
-			"10x10",
-			"ObserveLandmark2_W_0=No PositionRow_0=4,PositionCol_0=10",
-			"PositionRow_1=3 PositionRow_0=3,Action_1=MoveEast",
-			"PositionRow_1=3 PositionRow_0=4,Action=MoveSouth 0.9",
-			"PositionRow_1=3 PositionRow_0=4,Action=MoveSouth 0.900886",
-			"PositionRow",
-			"pr",
-			"PR",
-			"pr",
-			"PR",
-			"value",
-			"i",
-			"int_val",
-			"each_val",
-			"=No",
-			"print",
-			"observelandmark2_N_",
-			"observelandmark2_N_1=No"
+			"7913"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -714,60 +737,30 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "search.py",
+					"file": "phase_1/search.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14227,
+						"buffer_size": 11601,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9645,
-								9645
+								117,
+								117
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.sublime-syntax",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4568.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "json_files/courses.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25507917,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								936,
-								936
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -778,48 +771,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "run.sh",
+					"buffer": 1,
+					"file": "phase_1/vectorize_json.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 73,
+						"buffer_size": 5900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11,
-								11
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "vectorize_json.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5669,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								562,
-								562
+								3027,
+								3027
 							]
 						],
 						"settings":
@@ -829,126 +794,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2039.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "read_JSON.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4068,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7,
-								11
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1111,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								639,
-								639
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "json_files/course_vector.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24071691,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								238,
-								238
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "txt_files/synonyms_short.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 92,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								92,
-								92
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -956,7 +805,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -1008,16 +857,20 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "ir",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"ir",
+				"",
 				"~/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/IR.sublime-project"
 			],
 			[
-				"",
-				"~/Google Drive/JHU/2017 Spring/ML Data to Models/Homeworks/data_to_models.sublime-project"
+				"information retr",
+				"~/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/IR.sublime-project"
+			],
+			[
+				"ir",
+				"~/Google Drive/JHU/2017 Spring/Information Retrieval and Web Agents/Homework/IR.sublime-project"
 			],
 			[
 				"paral",

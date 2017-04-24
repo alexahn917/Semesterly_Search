@@ -65,6 +65,21 @@ def main():
         else:
             print("ERROR!")
 
+    # Retrieve courses for Fall 2017
+    courses_fa2017 = {}
+    courses_sp2017 = {}
+    ID_fa2017 = 0
+    ID_sp2017 = 0
+    for code, course in courses.iteritems():
+        if course['term'] == 'Fall' and course['year'] == '2017':
+            courses_fa2017[code] = course
+            ID_fa2017+=1
+        if course['term'] == 'Spring' and course['year'] == '2017':
+            courses_sp2017[code] = course
+            ID_sp2017+=1            
+    print "# of Courses in 2017 Fall: %d" % ID_fa2017
+    print "# of Courses in 2017 Spring: %d" % ID_sp2017
+
     print "Number of blocks: %d" %i
     print "Number of courses: %d" %ID
     print "Number of missing descriptions: %d" %ND
@@ -72,6 +87,12 @@ def main():
 
     with open("../json_files/preprocessed_courses.json", "w") as f:
         json.dump(courses, f, indent=4)
+
+    with open("../json_files/preprocessed_courses_FA2017.json", "w") as f:
+        json.dump(courses_fa2017, f, indent=4)
+
+    with open("../json_files/preprocessed_courses_SP2017.json", "w") as f:
+        json.dump(courses_sp2017, f, indent=4)
 
 def print_courses(courses):
     for key, course in courses.iteritems():
