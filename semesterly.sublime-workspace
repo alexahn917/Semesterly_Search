@@ -4,16 +4,16 @@
 		"selected_items":
 		[
 			[
+				"course_",
+				"courses_fa2017"
+			],
+			[
 				"course",
 				"COURSE_VECTOR"
 			],
 			[
 				"course_ve",
 				"COURSE_VECTOR_NORMS"
-			],
-			[
-				"course_",
-				"course_vector"
 			],
 			[
 				"cross",
@@ -395,7 +395,16 @@
 			"file": "phase_1/search.py",
 			"settings":
 			{
-				"buffer_size": 11601,
+				"buffer_size": 11608,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "json_files/preprocessed_courses.json",
+			"settings":
+			{
+				"buffer_size": 6293248,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -405,6 +414,15 @@
 			"settings":
 			{
 				"buffer_size": 5900,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "phase_1/read_json.py",
+			"settings":
+			{
+				"buffer_size": 4877,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -443,11 +461,16 @@
 	"expanded_folders":
 	[
 		"/Users/alex/Desktop/Semesterly",
+		"/Users/alex/Desktop/Semesterly/json_files",
 		"/Users/alex/Desktop/Semesterly/phase_1",
 		"/Users/alex/Desktop/Semesterly/phase_2"
 	],
 	"file_history":
 	[
+		"/Users/alex/Desktop/Semesterly/.gitignore",
+		"/Users/alex/Desktop/Semesterly/json_files/preprocessed_courses.json",
+		"/Users/alex/Desktop/Semesterly/json_files/preprocessed_courses_FA2017.json",
+		"/Users/alex/Desktop/Semesterly/json_files/courses.json",
 		"/Users/alex/Desktop/Semesterly/phase_2/search.py",
 		"/Users/alex/Desktop/Semesterly/phase_1/vectorize_json.py",
 		"/Users/alex/Desktop/Semesterly/phase_1/search.py",
@@ -459,7 +482,6 @@
 		"/Users/alex/Desktop/Semesterly/txt_files/synonyms_short.txt",
 		"/Users/alex/Desktop/Semesterly/phase_1/read_json.py",
 		"/Users/alex/Desktop/Semesterly/json_files/course_vector.json",
-		"/Users/alex/Desktop/Semesterly/json_files/courses.json",
 		"/Users/alex/Desktop/Semesterly/read_JSON.py",
 		"/Users/alex/Desktop/Semesterly/vectorize_json.py",
 		"/Users/alex/Desktop/Semesterly/run.sh",
@@ -572,13 +594,11 @@
 		"/Users/alex/Documents/GitHub/Coding_Challenges/src/Palantir/CatchInsideTrader.java",
 		"/Users/alex/Downloads/material-resume-master/index.html",
 		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/Transform/parseCSV.py",
-		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/Transform/CSVReader.java",
-		"/Users/alex/Documents/GitHub/Coding_Challenges/Python/findFraudolentTraders.py",
-		"/Users/alex/Google Drive/Career/Companies/MilliporeSigma/screen.txt"
+		"/Users/alex/Documents/GitHub/Baseball_Analytics_ML/PitchPrediction/ETL pipeline/Transform/CSVReader.java"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -592,6 +612,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"if",
+			"language and mind",
+			"        \"year\": \"2017\", ",
+			"        \"term\": \"Fall\", ",
+			"ND",
+			"nd",
+			"ND",
+			"    \"term\": \"Fall\",\n    \"year\": \"2017\"\n",
+			"    \"term\": \"Spring\",\n    \"year\": \"2017\"\n",
+			"2017",
 			"find_similar_courses",
 			"get_course_vect",
 			"curr",
@@ -709,17 +739,7 @@
 			")\n",
 			"docs_sorted_by_similarity",
 			"doc_vector",
-			"with",
-			"course_vector",
-			"term",
-			"course_vector",
-			"indent=4",
-			"course_freq_hash",
-			"school_freq_hash",
-			"corp_freq_hash",
-			"doc_vector",
-			"5669",
-			"7913"
+			"with"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -737,7 +757,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -746,15 +766,75 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11601,
+						"buffer_size": 11608,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								117,
-								117
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 674.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "json_files/preprocessed_courses.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6293248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1295064,
+								1295064
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "phase_1/vectorize_json.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								562,
+								562
 							]
 						],
 						"settings":
@@ -767,24 +847,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "phase_1/vectorize_json.py",
+					"buffer": 3,
+					"file": "phase_1/read_json.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5900,
+						"buffer_size": 4877,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3027,
-								3027
+								2169,
+								2176
 							]
 						],
 						"settings":
@@ -794,10 +874,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2039.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -908,7 +988,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 241.0,
+	"side_bar_width": 307.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

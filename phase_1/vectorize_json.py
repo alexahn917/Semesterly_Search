@@ -7,7 +7,7 @@ from pprint import pprint
 import math
 
 def main():
-    courses = open("../json_files/preprocessed_courses_FA2017.json").read()
+    courses = open("../json_files/preprocessed_courses.json").read()
     courses = json_loads_byteified(courses)
 
     # set up global variables (read_only)

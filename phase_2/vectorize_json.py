@@ -2,106 +2,64 @@ import pickle
 import json
 import re
 from collections import defaultdict
-from PorterStemmer import PorterStemmer
-from pprint import pprint
 import math
 import numpy as np
 from scipy.sparse import linalg
-from sklearn import mixture
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.cluster import KMeans
-from sklearn import metrics
-
-CODE_2_ID = {}
-ID_2_CODE = {}
-COURSE_VECTOR = None
-COURSE_VECTOR_NORMS = None
-TITLES_VECTOR = None
-TITLES_VECTOR_NORMS = None
-COURSE_CV = None
-TITLES_CV = None
-TITLES = []
-course_vect = []
-courses = None
 
 def main():
-    global courses
     courses = open("../json_files/preprocessed_courses.json").read()
     courses = json_loads_byteified(courses)
-    parse(courses)
-    vectorize()
-    write_files()
+    CODE_2_ID, ID_2_CODE, titles, course_vect = parse(courses)
+    CV, course_vector, course_vector_norms = vectorize(titles, course_vect)
+    write_files(courses, CODE_2_ID, ID_2_CODE, titles, course_vect, CV, course_vector, course_vector_norms)
 
-def write_files():
-    with open('../pickle/courses.pickle', 'wb') as handle:
+def write_files(courses, CODE_2_ID, ID_2_CODE, titles, course_vect, CV, course_vector, course_vector_norms):
+    with open('./pickle/courses.pickle', 'wb') as handle:
         pickle.dump(courses, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/CODE_2_ID.pickle', 'wb') as handle:
+    with open('./pickle/CODE_2_ID.pickle', 'wb') as handle:
         pickle.dump(CODE_2_ID, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/ID_2_CODE.pickle', 'wb') as handle:
+    with open('./pickle/ID_2_CODE.pickle', 'wb') as handle:
         pickle.dump(ID_2_CODE, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/COURSE_VECTOR.pickle', 'wb') as handle:
-        pickle.dump(COURSE_VECTOR, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/COURSE_VECTOR_NORMS.pickle', 'wb') as handle:
-        pickle.dump(COURSE_VECTOR_NORMS, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/TITLES_VECTOR.pickle', 'wb') as handle:
-        pickle.dump(TITLES_VECTOR, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/TITLES_VECTOR_NORMS.pickle', 'wb') as handle:
-        pickle.dump(TITLES_VECTOR_NORMS, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/COURSE_CV.pickle', 'wb') as handle:
-        pickle.dump(COURSE_CV, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/TITLES_CV.pickle', 'wb') as handle:
-        pickle.dump(TITLES_CV, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../pickle/TITLES.pickle', 'wb') as handle:
-        pickle.dump(TITLES, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/course_vector.pickle', 'wb') as handle:
+        pickle.dump(course_vector, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/course_vector_norms.pickle', 'wb') as handle:
+        pickle.dump(course_vector_norms, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/CV.pickle', 'wb') as handle:
+        pickle.dump(CV, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/titles.pickle', 'wb') as handle:
+        pickle.dump(titles, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def parse(courses):
-    global CODE_2_ID
-    global ID_2_CODE
-    global TITLES
-    global course_vect
-    
-    # containers for courses
+    CODE_2_ID = {}
+    ID_2_CODE = {}
+    titles = []
+    course_vect = []
     ID = 0
-    # create vector models
     for code, course in courses.iteritems():
         CODE_2_ID[course['code']] = ID
         ID_2_CODE[ID] = course['code']
-        course_vect.append(parse_course(course['description'], course['instructors'], course['term'], course['year']))
-        TITLES.append(parse_title(course['title']))
-        ID+=1
+        course_vect.append(str(course['description'].strip()))
+        #course_vect.append(parse_course(course['description'], course['instructors'], course['term'], course['year']))
+        titles.append(str(course['title']).strip())
+        ID+=1    
+    return CODE_2_ID, ID_2_CODE, titles, course_vect
+
         
-def vectorize():
-    global COURSE_VECTOR
-    global COURSE_VECTOR_NORMS
-    global TITLES_VECTOR
-    global TITLES_VECTOR_NORMS
-    global COURSE_CV
-    global TITLES_CV
+def vectorize(titles, course_vect):
+    CV = CountVectorizer(ngram_range=(1,2), stop_words='english')
+    descp_counts = CV.fit_transform(course_vect) * 3
+    title_counts = CV.transform(titles) * 10
+    course_counts = descp_counts + title_counts
+    TFIDF_TF = TfidfTransformer(use_idf=False).fit(descp_counts)
+    course_vector = TFIDF_TF.transform(course_counts)
 
-    COURSE_VECTOR_NORMS = []
-    TITLES_VECTOR_NORMS = []
-
-    COURSE_CV = CountVectorizer(ngram_range=(1,2), stop_words='english')
-    TITLES_CV = CountVectorizer(ngram_range=(1,2))
-    course_counts = COURSE_CV.fit_transform(course_vect)
-    titles_counts = TITLES_CV.fit_transform(TITLES)
-
-    course_tf = TfidfTransformer(use_idf=False).fit(course_counts)
-    COURSE_VECTOR = course_tf.transform(course_counts)
-    TITLES_VECTOR = titles_counts
-
-    for i in range(TITLES_VECTOR.shape[0]):
-        TITLES_VECTOR_NORMS.append(linalg.norm(TITLES_VECTOR[i,:]))
-
-    for i in range(COURSE_VECTOR.shape[0]):
-        COURSE_VECTOR_NORMS.append(linalg.norm(COURSE_VECTOR[i,:]))
+    course_vector_norms = []
+    for i in range(course_vector.shape[0]):
+        course_vector_norms.append(linalg.norm(course_vector[i,:]))
     
-
-def parse_title(title):
-    #print "TITLE: %s"%title.strip()
-    return str(title.strip())
+    return CV, course_vector, course_vector_norms
 
 def parse_course(course, instructors, term, year):
     course_str = ""
@@ -113,22 +71,8 @@ def parse_course(course, instructors, term, year):
         course_str += (term + " ")
     if year:
         course_str += (year)
-    #print "COURSE: %s"%course_str
     return str(course_str)
 
-def print_course(course):
-    print "\n=========================================="
-    print "ID: %s"%course['ID']
-    print "CODE: %s"%course['code']
-    print "TITLE: %s" %course['title']
-    print "DESCRIPTION: %s" %course['description']
-    print "INSTRUCTORS: %s" %course['instructors']
-    print "TERM: %s" %course['term']
-    print "YEAR: %s" %course['year']    
-
-def print_courses(courses):        
-    for key, course in courses.iteritems():
-        print_course(course)
 
 def json_load_byteified(file_handle):
     return _byteify(

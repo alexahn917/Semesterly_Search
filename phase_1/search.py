@@ -276,12 +276,6 @@ def cosine_sim(vec1, vec2, vec1_norm = 0.0, vec2_norm = 0.0):
     if len(vec1) > len(vec2):
         vec1, vec2 = vec2, vec1
 
-    # calculate the cross product
-#    for i,v in vec1.items():
-#        if i in vec2:
-#            print(i)
-#            print("vec1:", v)
-#            print("vec2:", vec2[i])
 
     cross_product = sum(vec1.get(term, 0) * vec2.get(term, 0) for term in vec1.keys())
 
