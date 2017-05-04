@@ -4,75 +4,73 @@ import re
 from collections import defaultdict
 import math
 import numpy as np
+from operator import or_
 from scipy.sparse import linalg
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 
+TITLE_WEIGHT = 10
+DESCP_WEIGHT = 3
+
 def main():
     courses = open("../json_files/preprocessed_courses.json").read()
     courses = json_loads_byteified(courses)
-    CODE_2_ID, ID_2_CODE, titles, course_vect = parse(courses)
-    CV, course_vector, course_vector_norms = vectorize(titles, course_vect)
-    write_files(courses, CODE_2_ID, ID_2_CODE, titles, course_vect, CV, course_vector, course_vector_norms)
+    CODE_2_ID, ID_2_CODE, title_vect, descp_vect = parse(courses)
+    CV, course_vectors, course_vectors_norms = vectorize(title_vect, descp_vect)
+    write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vectors_norms)
 
-def write_files(courses, CODE_2_ID, ID_2_CODE, titles, course_vect, CV, course_vector, course_vector_norms):
-    with open('./pickle/courses.pickle', 'wb') as handle:
-        pickle.dump(courses, handle, protocol=pickle.HIGHEST_PROTOCOL)
+def write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vectors_norms):
     with open('./pickle/CODE_2_ID.pickle', 'wb') as handle:
         pickle.dump(CODE_2_ID, handle, protocol=pickle.HIGHEST_PROTOCOL)
     with open('./pickle/ID_2_CODE.pickle', 'wb') as handle:
         pickle.dump(ID_2_CODE, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickle/course_vector.pickle', 'wb') as handle:
-        pickle.dump(course_vector, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickle/course_vector_norms.pickle', 'wb') as handle:
-        pickle.dump(course_vector_norms, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/course_vectors.pickle', 'wb') as handle:
+        pickle.dump(course_vectors, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/course_vectors_norms.pickle', 'wb') as handle:
+        pickle.dump(course_vectors_norms, handle, protocol=pickle.HIGHEST_PROTOCOL)
     with open('./pickle/CV.pickle', 'wb') as handle:
         pickle.dump(CV, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    with open('./pickle/titles.pickle', 'wb') as handle:
-        pickle.dump(titles, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def parse(courses):
     CODE_2_ID = {}
     ID_2_CODE = {}
-    titles = []
-    course_vect = []
+    title_vect = []
+    descp_vect = []
     ID = 0
     for code, course in courses.iteritems():
         CODE_2_ID[course['code']] = ID
         ID_2_CODE[ID] = course['code']
-        course_vect.append(str(course['description'].strip()))
-        #course_vect.append(parse_course(course['description'], course['instructors'], course['term'], course['year']))
-        titles.append(str(course['title']).strip())
-        ID+=1    
-    return CODE_2_ID, ID_2_CODE, titles, course_vect
+        descp_vect.append(str(course['description'].strip()))
+        title_vect.append(str(course['title']).strip())
+        ID+=1
+    return CODE_2_ID, ID_2_CODE, title_vect, descp_vect
 
-        
-def vectorize(titles, course_vect):
-    CV = CountVectorizer(ngram_range=(1,2), stop_words='english')
-    descp_counts = CV.fit_transform(course_vect) * 3
-    title_counts = CV.transform(titles) * 10
+
+def vocabularize(corpus):
+    return set([word for doc in corpus for word in tokenizer(doc)])
+
+def tokenizer(doc):
+    # Using default pattern from CountVectorizer
+    token_pattern = re.compile('(?u)\\b\\w\\w+\\b')
+    return [t for t in token_pattern.findall(doc)]
+
+def vectorize(title_vect, descp_vect):
+
+    # vectorize course objects
+    vocabulary = reduce(or_, [vocabularize(title_vect), vocabularize(descp_vect)])
+    CV = CountVectorizer(ngram_range=(1,2), vocabulary=vocabulary, stop_words='english')    
+    descp_counts = CV.transform(descp_vect) * 3
+    title_counts = CV.transform(title_vect) * 10
     course_counts = descp_counts + title_counts
     TFIDF_TF = TfidfTransformer(use_idf=False).fit(descp_counts)
-    course_vector = TFIDF_TF.transform(course_counts)
+    course_vectors = TFIDF_TF.transform(course_counts)
 
-    course_vector_norms = []
-    for i in range(course_vector.shape[0]):
-        course_vector_norms.append(linalg.norm(course_vector[i,:]))
-    
-    return CV, course_vector, course_vector_norms
+    # calculate norms
+    course_vectors_norms = []
+    for i in range(course_vectors.shape[0]):
+        course_vectors_norms.append(linalg.norm(course_vectors[i,:]))
 
-def parse_course(course, instructors, term, year):
-    course_str = ""
-    if course:
-        course_str += (course + " ")
-    if instructors:
-        course_str += (instructors + " ")
-    if term:
-        course_str += (term + " ")
-    if year:
-        course_str += (year)
-    return str(course_str)
-
+    return CV, course_vectors, course_vectors_norms
 
 def json_load_byteified(file_handle):
     return _byteify(

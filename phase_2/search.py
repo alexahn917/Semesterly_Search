@@ -16,16 +16,11 @@ from collections import defaultdict
 
 CODE_2_ID = None
 ID_2_CODE = None
-COURSE_VECTOR = None
-COURSE_VECTOR_NORMS = None
-TITLES_VECTOR = None
-TITLES_VECTOR_NORMS = None
-COURSE_CV = None
-TITLES_CV = None
-TITLES = None
-course_vect = None
-titles_vect  = None
+titles = None
 courses = None
+course_vector = None
+course_vector_norms = None
+CV = None
 doc_simula = []
 res_vector = []
 N = 0
@@ -33,38 +28,28 @@ N = 0
 def load_pickles():
     global CODE_2_ID
     global ID_2_CODE
-    global COURSE_VECTOR
-    global COURSE_VECTOR_NORMS
-    global TITLES_VECTOR
-    global TITLES_VECTOR_NORMS
-    global COURSE_CV
-    global TITLES_CV
-    global TITLES
-    global course_vect
-    global titles_vect 
+    global titles
     global courses
+    global course_vector
+    global course_vector_norms
+    global CV
     global N
 
-    with open('../pickle/courses.pickle', 'r') as handle:
+    with open('./pickle/courses.pickle', 'wb') as handle:
         courses = pickle.load(handle)
-    with open('../pickle/CODE_2_ID.pickle', 'r') as handle:
+    with open('./pickle/CODE_2_ID.pickle', 'wb') as handle:
         CODE_2_ID = pickle.load(handle)
-    with open('../pickle/ID_2_CODE.pickle', 'r') as handle:
+    with open('./pickle/ID_2_CODE.pickle', 'wb') as handle:
         ID_2_CODE = pickle.load(handle)
-    with open('../pickle/COURSE_VECTOR.pickle', 'r') as handle:
-        COURSE_VECTOR = pickle.load(handle)
-    with open('../pickle/COURSE_VECTOR_NORMS.pickle', 'r') as handle:
-        COURSE_VECTOR_NORMS = pickle.load(handle)        
-    with open('../pickle/TITLES_VECTOR.pickle', 'r') as handle:
-        TITLES_VECTOR = pickle.load(handle)
-    with open('../pickle/TITLES_VECTOR_NORMS.pickle', 'r') as handle:
-        TITLES_VECTOR_NORMS = pickle.load(handle)        
-    with open('../pickle/COURSE_CV.pickle', 'r') as handle:
-        COURSE_CV = pickle.load(handle)
-    with open('../pickle/TITLES_CV.pickle', 'r') as handle:
-        TITLES_CV = pickle.load(handle)    
-    with open('../pickle/TITLES.pickle', 'r') as handle:
-        TITLES = pickle.load(handle)            
+    with open('./pickle/course_vector.pickle', 'wb') as handle:
+        course_vector = pickle.load(handle)
+    with open('./pickle/course_vector_norms.pickle', 'wb') as handle:
+        course_vector_norms = pickle.load(handle)
+    with open('./pickle/CV.pickle', 'wb') as handle:
+        CV = pickle.load(handle)
+    with open('./pickle/titles.pickle', 'wb') as handle:
+        titles = pickle.load(handle)
+    
     N = COURSE_VECTOR.shape[0]
     #pdb.set_trace()
     
