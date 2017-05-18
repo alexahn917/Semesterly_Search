@@ -35,22 +35,22 @@ def load_pickles():
     global CV
     global N
 
-    with open('./pickle/courses.pickle', 'wb') as handle:
-        courses = pickle.load(handle)
-    with open('./pickle/CODE_2_ID.pickle', 'wb') as handle:
+    #with open('pickle/courses.pickle', 'r') as handle:
+        #courses = pickle.load(handle)
+    with open('pickle/CODE_2_ID.pickle', 'r') as handle:
         CODE_2_ID = pickle.load(handle)
-    with open('./pickle/ID_2_CODE.pickle', 'wb') as handle:
+    with open('pickle/ID_2_CODE.pickle', 'r') as handle:
         ID_2_CODE = pickle.load(handle)
-    with open('./pickle/course_vector.pickle', 'wb') as handle:
+    with open('pickle/course_vectors.pickle', 'r') as handle:
         course_vector = pickle.load(handle)
-    with open('./pickle/course_vector_norms.pickle', 'wb') as handle:
+    with open('pickle/course_vectors_norms.pickle', 'r') as handle:
         course_vector_norms = pickle.load(handle)
-    with open('./pickle/CV.pickle', 'wb') as handle:
+    with open('pickle/CV.pickle', 'r') as handle:
         CV = pickle.load(handle)
-    with open('./pickle/titles.pickle', 'wb') as handle:
+    with open('pickle/titles.pickle', 'r') as handle:
         titles = pickle.load(handle)
     
-    N = COURSE_VECTOR.shape[0]
+    N = course_vector.shape[0]
     #pdb.set_trace()
     
 def main():
@@ -113,8 +113,8 @@ def find_similar_courses():
 
 def convert_keyboard_query():
     qry = raw_input("Search Semeter.ly : ").lower()
-    titles_qry = TITLES_CV.transform([qry])
-    course_qry = COURSE_CV.transform([qry])
+    titles_qry = CV.transform([qry])
+    course_qry = CV.transform([qry])
     return qry, titles_qry, course_qry
 
 

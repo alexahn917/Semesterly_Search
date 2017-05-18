@@ -17,9 +17,9 @@ def main():
     courses = json_loads_byteified(courses)
     CODE_2_ID, ID_2_CODE, title_vect, descp_vect = parse(courses)
     CV, course_vectors, course_vectors_norms = vectorize(title_vect, descp_vect)
-    write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vectors_norms)
+    write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vectors_norms, title_vect)
 
-def write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vectors_norms):
+def write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vectors_norms, title_vect):
     with open('./pickle/CODE_2_ID.pickle', 'wb') as handle:
         pickle.dump(CODE_2_ID, handle, protocol=pickle.HIGHEST_PROTOCOL)
     with open('./pickle/ID_2_CODE.pickle', 'wb') as handle:
@@ -30,6 +30,8 @@ def write_files(courses, CODE_2_ID, ID_2_CODE, CV, course_vectors, course_vector
         pickle.dump(course_vectors_norms, handle, protocol=pickle.HIGHEST_PROTOCOL)
     with open('./pickle/CV.pickle', 'wb') as handle:
         pickle.dump(CV, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    with open('./pickle/titles.pickle', 'wb') as handle:
+        pickle.dump(title_vect, handle, protocol=pickle.HIGHEST_PROTOCOL)        
 
 def parse(courses):
     CODE_2_ID = {}
@@ -55,7 +57,6 @@ def tokenizer(doc):
     return [t for t in token_pattern.findall(doc)]
 
 def vectorize(title_vect, descp_vect):
-
     # vectorize course objects
     vocabulary = reduce(or_, [vocabularize(title_vect), vocabularize(descp_vect)])
     CV = CountVectorizer(ngram_range=(1,2), vocabulary=vocabulary, stop_words='english')    

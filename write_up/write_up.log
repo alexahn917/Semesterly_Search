@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 MAR 2017 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 MAY 2017 03:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -227,10 +227,57 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gin@req@height=\dimen116
 \Gin@req@width=\dimen117
 )
-\c@lecnum=\count110
-\c@theorem=\count111
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(./write_up.aux)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@tempdima=\dimen121
+\caption@indent=\dimen122
+\caption@parindent=\dimen123
+\caption@hangindent=\dimen124
+)
+\c@ContinuedFloat=\count110
+Package caption Info: hyperref package is loaded.
+)
+\c@KVtest=\count111
+\sf@farskip=\skip47
+\sf@captopadj=\dimen125
+\sf@capskip=\skip48
+\sf@nearskip=\skip49
+\c@subfigure=\count112
+\c@subfigure@save=\count113
+\c@lofdepth=\count114
+\c@subtable=\count115
+\c@subtable@save=\count116
+\c@lotdepth=\count117
+\sf@top=\skip50
+\sf@bottom=\skip51
+)
+\c@lecnum=\count118
+\c@theorem=\count119
+
+(./write_up.aux
+
+LaTeX Warning: Label `fig:comp1' multiply defined.
+
+
+LaTeX Warning: Label `fig:comp1' multiply defined.
+
+
+LaTeX Warning: Label `fig:comp1' multiply defined.
+
+
+LaTeX Warning: Label `fig:comp1' multiply defined.
+
+)
 \openout1 = `write_up.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -249,14 +296,13 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 \AtBeginShipoutBox=\box28
 Package hyperref Info: Link coloring OFF on input line 73.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count112
+\c@section@level=\count120
 )
 LaTeX Info: Redefining \ref on input line 73.
 LaTeX Info: Redefining \pageref on input line 73.
@@ -269,16 +315,16 @@ LaTeX Info: Redefining \nameref on input line 73.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen118
+\scratchcounter=\count121
+\scratchdimen=\dimen126
 \scratchbox=\box29
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\nofMPsegments=\count122
+\nofMParguments=\count123
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen119
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen127
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
 \everyMPtoPDFconversion=\toks21
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -295,49 +341,231 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-Overfull \hbox (34.24062pt too wide) in paragraph at lines 217--217
-[]\OT1/cmtt/m/n/10 Type in your query:mobile application development android fr
-ontend user interface and experience[] 
+[2] [3] [4] [5] <Images/1.png, id=91, 587.19376pt x 235.88126pt>
+File: Images/1.png Graphic file (type png)
+
+<use Images/1.png>
+Package pdftex.def Info: Images/1.png used on input line 271.
+(pdftex.def)             Requested size: 469.75499pt x 188.70525pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 286.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 286.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [6 <./Images/1.png>] <Images/2.png, id=107, 593.21625pt x 230.8625pt>
+File: Images/2.png Graphic file (type png)
+ <use Images/2.png>
+Package pdftex.def Info: Images/2.png used on input line 294.
+(pdftex.def)             Requested size: 469.75499pt x 182.82321pt.
+
+<Images/3.png, id=109, 600.2425pt x 474.77374pt>
+File: Images/3.png Graphic file (type png)
+ <use Images/3.png>
+Package pdftex.def Info: Images/3.png used on input line 313.
+(pdftex.def)             Requested size: 469.75499pt x 371.57532pt.
+ [7 <./Images/2.png>] [8 <./Images/3.png>] <Images/4.png, id=129, 1927.2pt x 98
+7.69pt>
+File: Images/4.png Graphic file (type png)
+
+<use Images/4.png>
+Package pdftex.def Info: Images/4.png used on input line 331.
+(pdftex.def)             Requested size: 469.75499pt x 240.74281pt.
+ <images/5_1.png, id=131, 1926.19624pt x 985.6825pt>
+File: images/5_1.png Graphic file (type png)
+
+<use images/5_1.png>
+Package pdftex.def Info: images/5_1.png used on input line 343.
+(pdftex.def)             Requested size: 213.39566pt x 109.19246pt.
+ <images/5_2.png, id=132, 1926.19624pt x 987.69pt>
+File: images/5_2.png Graphic file (type png)
+
+<use images/5_2.png>
+Package pdftex.def Info: images/5_2.png used on input line 345.
+(pdftex.def)             Requested size: 213.39566pt x 109.41484pt.
+ <images/6_1.png, id=133, 1923.185pt x 988.69376pt>
+File: images/6_1.png Graphic file (type png)
+
+<use images/6_1.png>
+Package pdftex.def Info: images/6_1.png used on input line 352.
+(pdftex.def)             Requested size: 213.39566pt x 109.69199pt.
+ <images/6_2.png, id=134, 1925.1925pt x 985.6825pt>
+File: images/6_2.png Graphic file (type png)
+
+<use images/6_2.png>
+Package pdftex.def Info: images/6_2.png used on input line 354.
+(pdftex.def)             Requested size: 213.39566pt x 109.25262pt.
+ <images/7_1.png, id=135, 1924.18875pt x 983.675pt>
+File: images/7_1.png Graphic file (type png)
+
+<use images/7_1.png>
+Package pdftex.def Info: images/7_1.png used on input line 361.
+(pdftex.def)             Requested size: 213.39566pt x 109.09015pt.
+ <images/7_2.png, id=136, 1927.2pt x 986.68625pt>
+File: images/7_2.png Graphic file (type png)
+
+<use images/7_2.png>
+Package pdftex.def Info: images/7_2.png used on input line 363.
+(pdftex.def)             Requested size: 213.39566pt x 109.24342pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./Images/4.png>] [10 <./images/5_1.png> <./images/5_2.png> <./images/6_1.p
+ng> <./images/6_2.png> <./images/7_1.png> <./images/7_2.png>]
+<images/8_1.png, id=164, 1136.245pt x 346.29375pt>
+File: images/8_1.png Graphic file (type png)
+ <use images/8_1.png>
+Package pdftex.def Info: images/8_1.png used on input line 376.
+(pdftex.def)             Requested size: 213.39566pt x 65.03558pt.
+
+<images/8_2.png, id=165, 1137.24875pt x 345.29pt>
+File: images/8_2.png Graphic file (type png)
+ <use images/8_2.png>
+Package pdftex.def Info: images/8_2.png used on input line 378.
+(pdftex.def)             Requested size: 213.39566pt x 64.78912pt.
+
+<images/9_1.png, id=166, 1137.24875pt x 342.27875pt>
+File: images/9_1.png Graphic file (type png)
+ <use images/9_1.png>
+Package pdftex.def Info: images/9_1.png used on input line 386.
+(pdftex.def)             Requested size: 213.39566pt x 64.2241pt.
+
+<images/9_2.png, id=167, 1137.24875pt x 344.28625pt>
+File: images/9_2.png Graphic file (type png)
+ <use images/9_2.png>
+Package pdftex.def Info: images/9_2.png used on input line 388.
+(pdftex.def)             Requested size: 213.39566pt x 64.60078pt.
+
+[11 <./images/8_1.png> <./images/8_2.png> <./images/9_1.png> <./images/9_2.png>
+]
+Overfull \hbox (2.74089pt too wide) in paragraph at lines 426--426
+[]\OT1/cmtt/m/n/10 sec making engineering management decision risk financial bu
+siness decision making product[] 
  []
 
-[3]
-Overfull \hbox (28.99066pt too wide) in paragraph at lines 217--217
-[]\OT1/cmtt/m/n/10 Type in your query:genomic data health biology and computer 
-vision machine learning data mining[] 
+
+Overfull \hbox (28.99066pt too wide) in paragraph at lines 426--426
+[]\OT1/cmtt/m/n/10 research students seminar faculty graduate required science 
+project materials graduate students[] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 230.
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 230.
+
+Overfull \hbox (18.49075pt too wide) in paragraph at lines 426--426
+[]\OT1/cmtt/m/n/10 course topics introduction include chemistry analysis materi
+als theory methods topics include[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+[13] <Images/10.png, id=195, 462.528pt x 346.896pt>
+File: Images/10.png Graphic file (type png)
+ <use Images/10.png>
+Package pdftex.def Info: Images/10.png used on input line 479.
+(pdftex.def)             Requested size: 469.75499pt x 352.33655pt.
+
+
+LaTeX Warning: Reference `fig:GMM clustering' on page 1-14 undefined on input l
+ine 483.
+
+
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+ [14 <./Images/10.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 499.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 499.
  (./write_up.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 230.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 230.
-Package rerunfilecheck Info: File `write_up.out' has not changed.
-(rerunfilecheck)             Checksum: E8E3A1A239D3FA39F44E0F17882E4A8A;380.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 230.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 499.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 499.
+
+
+Package rerunfilecheck Warning: File `write_up.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `write_up.out':
+(rerunfilecheck)             Before: A230A10B30F5248CDDF25FB7068D4E85;575
+(rerunfilecheck)             After:  2BC6FDBD41DEBB77452B0E2C6E062E54;530.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 499.
  ) 
 Here is how much of TeX's memory you used:
- 5727 strings out of 493014
- 83015 string characters out of 6133351
- 172785 words of memory out of 5000000
- 9226 multiletter control sequences out of 15000+600000
- 5420 words of font info for 20 fonts, out of 8000000 for 9000
+ 7087 strings out of 493014
+ 106811 string characters out of 6133351
+ 202094 words of memory out of 5000000
+ 10485 multiletter control sequences out of 15000+600000
+ 7418 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,5n,28p,848b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on write_up.pdf (4 pages, 98640 bytes).
+ 44i,9n,49p,938b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on write_up.pdf (15 pages, 1416810 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
